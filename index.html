@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>todolist6登录</title>   
+
+	<link rel="stylesheet" type="text/css" href="static/css/base.css">
+	<link rel="stylesheet" type="text/css" href="static/css/common.css">
+	<link rel="stylesheet" type="text/css" href="static/css/index.css">
+
+</head>
+<body>
+	<header>
+		<iframe src="pages/header.html" class="head"></iframe>
+	</header>
+
+	<section>
+		<div class="login">
+			<form action="../pages/TreatLogin.php" method="post">
+				<h1>用户登录</h1>
+				<ul>
+					<li>
+						<label class="front">账 户：</label>
+						<input type="text" name="email" placeholder="请输入您注册的邮箱" id="email">
+					</li>
+					<li>
+						<label class="front">密 码：</label>
+						<input type="password" name="passw" placeholder="请输入密码" id="passw">
+					</li>
+					<li>
+						<label class="front"></label>
+						<label><input type="checkbox" name="autologin"><a class="autologin">自动登录</a></label>
+					</li>
+					<li>
+						<label class="front"></label>
+						<button type="submit" id="submit">登 录</button>
+						<a href="" class="tip">忘记密码？</a>
+						<a href="pages/register.html" class="tip">注册</a>
+					</li>
+				</ul>
+			</form>
+		</di>
+	</section>
+
+	<footer>
+		<iframe class="foot" src="pages/footer.html"></iframe>
+	</footer>
+	
+	<script type="text/javascript" src="static/js/index.js"></script>
+
+</body>
+</html>
+

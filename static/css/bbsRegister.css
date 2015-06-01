@@ -1,0 +1,89 @@
+
+body {
+	background-image: url(../img/form_bg.png);
+	background-repeat:no-repeat;
+ 	background-position:320px 100px;
+ 	background-color: #eee;
+ 	background-size: 750px 450px;
+}
+
+.logo {
+	position: absolute;
+	top: 40px;left: 40px;
+}
+
+select {
+	width: 135px;
+	font-family: "Microsoft YaHei";
+	font-size: 20px;
+}
+
+.main {
+	position: absolute;
+	width: 620px;
+	top: 50%;left: 50%;
+	margin-top: -180px;margin-left: -280px;
+}
+
+.main .title {
+	font-size: 20px;
+	padding: 10px;padding-bottom: 30px;
+	font-weight: bold;
+}
+
+.main_left {
+	float: left;
+	padding-right: 20px;
+	border-right: 1px solid;
+}
+
+.main_right {
+	float: right;
+}
+
+.main .tip {
+	padding-top: 10px;
+	padding-bottom: 25px;
+}
+
+.pwpower {
+	width: 100%;
+}
+
+.pwpower td {
+	font-size: 10px;
+	padding: 0;
+	text-align: center;
+	background-color: #FFF0F5;
+}
+
+
+.foot {
+	position: absolute;
+	bottom: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

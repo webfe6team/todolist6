@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>todolist6注册</title>   
+
+	<link rel="stylesheet" type="text/css" href="../static/css/base.css">
+	<link rel="stylesheet" type="text/css" href="../static/css/common.css">
+	<link rel="stylesheet" type="text/css" href="../static/css/register.css">
+
+</head>
+<body>
+	<header>
+		<iframe src="header.html" class="head"></iframe>
+	</header>
+
+	<section>
+		<div class="login">
+			<form action="TreatRegister.php" method="post">
+				<h1>用户注册</h1>
+				<ul>
+					<li>
+						<label class="front">帐 号：</label>
+						<input type="text" name="email" placeholder="请输入您的邮箱"
+						 id="email">
+					</li>
+					<li>
+						<label class="front">昵 称：</label>
+						<input type="text" name="nickName" placeholder="请输入您的昵称" id="nickName">
+					</li>
+					<li>
+						<label class="front">密 码：</label>
+						<input type="password" name="passw" placeholder="请设置密码" id="passw">
+					</li>
+					<li>
+						<label class="front"></label>
+						<table class="pwpower">
+							<tr>
+								<td id="strength_L" >弱</td>    
+	            				<td id="strength_M" >中</td>    
+	            				<td id="strength_H" >强</td>
+							</tr>
+						</table>
+					</li>
+					<li>
+						<label class="front">密码确认：</label>
+						<input type="password" name="password" placeholder="请确认密码" id="passwInsure">
+					</li>
+					<li>
+						<label class="front"></label>
+						<label><input type="checkbox" name="agree" id="agree"><a class="agree">我同意<a href="" class="tip">服务条款</a></a></label>
+					</li>
+					<li>
+						<label class="front"></label>
+						<button type="submit" id="submit">提 交</button>
+						<button type="reset">重 置</button>
+					</li>
+				</ul>
+			</form>
+		</di>
+	</section>
+
+	<footer>
+		<iframe class="foot" src="footer.html"></iframe>
+	</footer>
+
+	
+	<script type="text/javascript" src="../static/js/register.js"></script>
+
+</body>
+</html>
+

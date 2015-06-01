@@ -1,0 +1,62 @@
+
+/*-----头部------*/
+
+header {
+	
+}
+
+
+/*-----主体部分------*/
+
+.login {
+	width: 550px;
+	border: 1px solid #ccc;
+	margin: 100px auto;
+	padding: 20px;
+}
+
+.login ul {
+	margin-top: 50px;
+}
+
+.login li {
+	padding: 15px;
+}
+
+.front {
+	display: inline-block;
+	width: 4em;
+	font-size: 15px;
+	text-align: right;
+}
+
+.autologin {
+	font-size: 13px;
+	padding-left: 10px;
+}
+
+input[type="text"],input[type="password"] {
+	font-family: "Microsoft YaHei", Sans-serif;
+	font-size: 15px;
+	padding: 8px;
+	width: 420px;
+}
+
+.login li:last-child a {
+	margin-left: 5px;
+}
+
+button {
+	font-family: "Microsoft YaHei", Sans-serif;
+	font-size: 20px;
+	padding: 5px 40px;
+	background: #5599FF;
+	color: #fff;
+	border: none;
+	cursor: pointer;
+	transition:all 300ms ease;
+}
+
+button:hover {
+	background: #357ebd;
+}

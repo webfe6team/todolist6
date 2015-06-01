@@ -1,0 +1,45 @@
+
+header {
+	height: 80px;
+	line-height: 80px;
+	border-top: 3px solid #444;
+	box-shadow: 0 0 3px 3px rgba(0,0,0,0.2);
+}
+
+header ul, header .logo {
+	float: left;
+}
+
+header .info {
+	float: right;
+}
+
+header ul {
+	margin-left: 30px;
+}
+
+header li {
+	display: inline-table;
+}
+
+header li a {
+	display: block;
+	padding: 0 20px;
+	color: #888;
+	transition: all 300ms ease;
+}
+
+header li a:hover {
+	color: #000;
+	border-bottom: 5px solid #5599FF;
+}
+
+.logo {
+	width: 200px;
+	height: 50px;
+	margin-top: 15px;
+}
+
+.serve {
+	color: #444;
+}

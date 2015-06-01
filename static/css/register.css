@@ -1,0 +1,78 @@
+
+/*-----头部------*/
+
+header {
+	
+}
+
+
+/*-----主体部分------*/
+
+.login {
+	width: 550px;
+	border: 1px solid #ccc;
+	margin: 30px auto;
+	padding: 20px;
+}
+
+.login ul {
+	margin-top: 30px;
+}
+
+.login li {
+	padding: 12px;
+}
+
+.front {
+	display: inline-block;
+	width: 5em;
+	font-size: 15px;
+	text-align: right;
+}
+
+.agree {
+	font-size: 13px;
+	padding-left: 10px;
+}
+
+input[type="text"],input[type="password"] {
+	font-family: "Microsoft YaHei", Sans-serif;
+	font-size: 15px;
+	padding: 8px;
+	width: 410px;
+}
+
+button {
+	font-family: "Microsoft YaHei", Sans-serif;
+	font-size: 20px;
+	padding: 5px 40px;
+	background: #5599FF;
+	color: #fff;
+	border: none;
+	cursor: pointer;
+	transition:all 300ms ease;
+}
+
+button:hover {
+	background: #357ebd;
+}
+
+.pwpower {
+	width: 430px;
+	float: right;
+	margin-right: 13px;
+}
+
+.pwpower td {
+	font-size: 10px;
+	padding: 0;
+	text-align: center;
+	background-color: #FFF0F5;
+	font-family: "Microsoft YaHei" Sans-serif;
+	transition:all 1000ms ease;
+}
+
+button[type="reset"] {
+	float: right;
+	margin-right: 13px;
+}
