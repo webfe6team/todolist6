@@ -40,7 +40,7 @@
 <img src="./img/task.png">
 <img src="./img/task2.png">  
 6. 回顾设计:  
-负责人：  
+负责人：殷献勇  
 任务：实现回顾任务时间轴，注意要js调出数据添加时间轴，写静态页面注意可扩展性  
 功能实现图片： 
 <img src="./img/huigu.png">  
