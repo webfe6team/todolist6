@@ -15,4 +15,13 @@
 <img src="./img/header.png">
 <img src="./img/header2.png">
 <img src="./img/header3.png">
-<img src="./img/header4.png">
+<img src="./img/header4.png">  
+3. 个人项目页制作：  
+负责人：  
+任务：实现个人项目的展示，注意图片数遍放上会扶起，同时出现项目编辑按钮。同时完成，弹出层的项目设置界面。  
+
+功能实现图片  
+<img src="./img/main.png">   
+
+弹出样式设计，这里只需要有项目信息就可以，其他的省略 
+<img src="./img/main2.png">
