@@ -75,13 +75,11 @@
 
 	var obj = document.getElementById("passw");
 
-	obj.onkeyup = function(){
+	function handler(){
 		pwStrength(obj.value);
-	};
+	}
 
-	obj.onblur = function(){
-		pwStrength(obj.value);
-	};
+	EventUtil.addEvent(obj, 'keyup blur', [handler, handler]);
 
 	
 	/*
