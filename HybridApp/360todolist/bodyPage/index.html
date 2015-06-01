@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>个人项目</title>
+    <link href="../css/mui.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="../css/app.css" />
+</head>
+<body>
+	<header class="mui-bar mui-bar-nav tg-header">
+		<a id="info" class="mui-icon mui-icon mui-icon-arrowleft mui-pull-left"></a>
+		<a id="info" class="mui-icon mui-icon mui-icon-gear mui-pull-right"></a>
+		<h1 class="mui-title">示例项目</h1>
+	</header>
+	<script src="../js/mui.min.js"></script>
+	<script>
+		mui.init({
+			subpages:[{
+				url:'bodyPageMain.html',
+			    id:'bodyPageMain.html',
+			   	styles:{
+			    	top:'45px',//mui标题栏默认高度为45px；
+			        bottom:'0px'//默认为0px，可不定义；
+			    }
+			}]
+		});
+	</script>
+</body>
+</html>

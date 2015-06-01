@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Hello</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="css/mui.min.css">
+	</head>
+	<body>	
+		<div class="mui-content"></div>
+		<script src="js/mui.min.js"></script>
+		<script>
+			mui.init({
+				gestureConfig:{
+					doubletap:true    //开启双击手势
+				},
+				subpages:[{
+					url:'itemListSub.html',
+					id:'itemListSub.html',
+					styles:{
+						top: '0px',
+						bottom: '0px',
+					}
+				}]
+			});
+			mui.plusReady(function() {
+				//关闭splash页面；
+				plus.navigator.closeSplashscreen();
+			});
+		</script>
+	</body>
+</html>

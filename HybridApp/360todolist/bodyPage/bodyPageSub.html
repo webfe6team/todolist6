@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>Hello MUI</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="../css/mui.min.css">
+		<link rel="stylesheet" type="text/css" href="../css/app.css"/>
+	</head>
+	<body>
+		<!--下拉刷新容器-->
+		<div id="pullrefresh" class="mui-content mui-scroll-wrapper">
+			<div class="mui-scroll">
+				<!--
+                	头部选项卡
+                -->
+				<section class="users">
+					<nav>
+						<a>
+							<img src="../images/newtask.png" alt="" />
+							<span>新任务</span>
+						</a>
+						<a>
+							<img src="../images/fengxiang.png" alt="" />
+							<span>新分享</span>
+						</a>
+						<a>
+							<img src="../images/newfile.png" alt="" />
+							<span>新文件</span>
+						</a>
+						<a>
+							<img src="../images/newdate.png" alt="" />
+							<span>新日程</span>
+						</a>
+					</nav>
+				</section>
+				<section class="itemsCate">
+					<ul>
+						<li>
+							任务版
+							<span class="timeTip">所有9项</span>
+						</li>
+						<li>日程表</li>
+						<li>分享墙</li>
+						<li>文件库</li>
+					</ul>
+				</section>
+				<div style="padding-left: 20px;font-size: 13px;margin-bottom: 5px;margin-top: 15px;color:#5E5E5E;">
+					最新动态
+				</div>
+				<!--数据列表-->
+				<ul class="mui-table-view mui-table-view-chevron newState" style="background-color: #EFEFF4">
+					<li class="taskContent">
+						<div class="taskTop">
+							<img src="../images/iconTask.png" alt="" />
+							<span class="taskPic">
+								<p>CaelumTian创建了任务</p>
+								<h5>第一个任务测试第一个任务测试第一个任务测试</h5>
+							</span>
+							<span class="taskTime">
+								6小时前<span class="mui-icon mui-icon-arrowright"></span>
+							</span>
+						</div>
+						<div class="taskBottom">
+							<span class="mui-icon mui-icon-star">&nbsp;赞</span>
+							<span class="mui-icon mui-icon-flag">&nbsp;评论</span>
+						</div>
+					</li>
+					<li class="taskContent">
+						<div class="taskTop">
+							<img src="../images/iconTask.png" alt="" />
+							<span class="taskPic">
+								<p>CaelumTian创建了任务</p>
+								<h5>第一个任务测试第一个任务测试第一个任务测试</h5>
+							</span>
+							<span class="taskTime">
+								6小时前<span class="mui-icon mui-icon-arrowright"></span>
+							</span>
+						</div>
+						<div class="taskBottom">
+							<span class="mui-icon mui-icon-star">&nbsp;赞</span>
+							<span class="mui-icon mui-icon-flag">&nbsp;评论</span>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script>
+			mui.init({
+				pullRefresh: {
+					container: '#pullrefresh',
+					down: {
+						callback: pulldownRefresh
+					},
+					up: {
+						contentrefresh: '正在加载...',
+						callback: pullupRefresh
+					}
+				}
+			});
+			/**
+			 * 下拉刷新具体业务实现
+			 */
+			function pulldownRefresh() {
+				setTimeout(function() {
+					var table = document.body.querySelector('.mui-table-view');
+					var cells = document.body.querySelectorAll('.mui-table-view-cell');
+					for (var i = cells.length, len = i + 3; i < len; i++) {
+						var li = document.createElement('li');
+						li.className = 'taskContent';
+						li.innerHTML = '<div class="taskTop"><img src="../images/iconTask.png" alt="" /><span class="taskPic"><p>CaelumTian创建了任务</p><h5>第一个任务测试第一个任务测试第一个任务测试</h5></span><span class="taskTime">6小时前<span class="mui-icon mui-icon-arrowright"></span></span></div><div class="taskBottom"><span class="mui-icon mui-icon-star">&nbsp;赞</span><span class="mui-icon mui-icon-flag">&nbsp;评论</span></div>';
+						//下拉刷新，新纪录插到最前面；
+						table.insertBefore(li, table.firstChild);
+					}
+					mui('#pullrefresh').pullRefresh().endPulldownToRefresh(); //refresh completed
+				}, 1500);
+			}
+			var count = 0;
+			/**
+			 * 上拉加载具体业务实现
+			 */
+			function pullupRefresh() {
+				setTimeout(function() {
+					mui('#pullrefresh').pullRefresh().endPullupToRefresh((++count > 2)); //参数为true代表没有更多数据了。
+					var table = document.body.querySelector('.mui-table-view');
+					var cells = document.body.querySelectorAll('.mui-table-view-cell');
+					for (var i = cells.length, len = i + 20; i < len; i++) {
+						var li = document.createElement('li');
+						li.className = 'mui-table-view-cell';
+						li.innerHTML = '<a class="mui-navigate-right">Item ' + (i + 1) + '</a>';
+						table.appendChild(li);
+					}
+				}, 1500);
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>个人项目</title>
+    <link href="../css/mui.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="../css/app.css" />
+</head>
+<body>
+	<div class="mui-content"></div>
+	<script src="../js/mui.min.js"></script>
+	<script>
+		mui.init({
+			gestureConfig:{
+				doubletap:true    //开启双击手势
+			},
+			subpages:[{
+				url:'bodyPageSub.html',
+				id:'bodyPageSub.html',
+				styles:{
+					top: '0px',
+					bottom: '0px',
+				}
+			}]
+		});
+		function pulldownRefresh() {
+				setTimeout(function() {
+					var table = document.body.querySelector('.mui-table-view');
+					var cells = document.body.querySelectorAll('.mui-table-view-cell');
+					for (var i = cells.length, len = i + 3; i < len; i++) {
+						var li = document.createElement('li');
+						li.className = 'mui-table-view-cell';
+						li.innerHTML = '<a class="mui-navigate-right">Item ' + (i + 1) + '</a>';
+						//下拉刷新，新纪录插到最前面；
+						table.insertBefore(li, table.firstChild);
+					}
+					mui('#pullrefresh').pullRefresh().endPulldownToRefresh(); //refresh completed
+				}, 1500);
+			}
+		function pullupRefresh() {
+			setTimeout(function() {
+				mui('#pullrefresh').pullRefresh().endPullupToRefresh((++count > 2)); //参数为true代表没有更多数据了。
+				var table = document.body.querySelector('.mui-table-view');
+				var cells = document.body.querySelectorAll('.mui-table-view-cell');
+				for (var i = cells.length, len = i + 20; i < len; i++) {
+					var li = document.createElement('li');
+					li.className = 'mui-table-view-cell';
+					li.innerHTML = '<a class="mui-navigate-right">Item ' + (i + 1) + '</a>';
+					table.appendChild(li);
+				}
+			}, 1500);
+		}
+	</script>
+</body>
+</html>
