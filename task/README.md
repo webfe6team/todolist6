@@ -24,4 +24,11 @@
 <img src="./img/main.png">   
 
 弹出样式设计，这里只需要有项目信息就可以，其他的省略 
-<img src="./img/main2.png">
+<img src="./img/main2.png">  
+4. 项目内页-主页设计    
+负责人：  
+任务： 完成个人任务列表，任务统计，表格统计（暂缓）。导航先实现 添加新任务。任务列表前边加上删除按钮，点击，该条任务消失，表示完成。  
+功能实现图片：  
+<img src="./img/mainp.png">
+<img src="./img/mainp2.png">
+<img src="./img/mainp3.png"> 
