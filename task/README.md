@@ -4,5 +4,5 @@
 1. 登录界面：  
 负责人：  
 功能实现图片  
-<a href="./img/login.png">
+<img src="./img/login.png">
 
