@@ -31,4 +31,12 @@
 功能实现图片：  
 <img src="./img/mainp.png">
 <img src="./img/mainp2.png">
-<img src="./img/mainp3.png"> 
+<img src="./img/mainp3.png">   
+5. 任务版设计：  
+负责人：  
+任务：实现任务版设计，按照如下划分栏目：进行中任务，已过期任务，已完成任务。
+注意优先级颜色：红色，黄色，无颜色。
+功能实现图片：  
+<img src="./img/task.png">
+<img src="./img/task2.png">
+
