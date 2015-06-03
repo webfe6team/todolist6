@@ -75,11 +75,13 @@
 
 	var obj = document.getElementById("passw");
 
-	function handler(){
+	obj.onkeyup = function(){
 		pwStrength(obj.value);
-	}
+	};
 
-	EventUtil.addEvent(obj, 'keyup blur', [handler, handler]);
+	obj.onblur = function(){
+		pwStrength(obj.value);
+	};
 
 	
 	/*
@@ -145,6 +147,37 @@
 			btn_submit.style.backgroundColor = "#5599FF";
 		}
 	}
+    
+   	/*
+		初始化示例任务
+	*/
+    
+    function formatDate(now){
+        var year = now.getFullYear();
+        var month = now.getMonth() + 1;
+        var day = now.getDate();
+        return year + "-" + month + "-" + day;
+    }
+    
+    var initInfoObj = {
+        "currentTask" : [
+            {
+                "taskName" : "示例任务",
+                "taskDescribe" : "我是示例任务",
+                "taskType" : "互联网任务",
+                "taskMark" : false,
+                "startTime" : "",
+                "taskState" : false,
+                "endTime" : ""
+            }
+        ]
+    }
+    
+    initInfoObj.currentTask[0].startTime = formatDate(new Date());
+    
+    var node_info = document.getElementById("info");
+    node_info.value = JSON.stringify(initInfoObj);
+    console.log(node_info.value);
 
 })();
 

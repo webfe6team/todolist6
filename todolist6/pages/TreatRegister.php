@@ -7,8 +7,9 @@
 	$email = $_POST["email"];
 	$nickName = $_POST["nickName"];
 	$passw = $_POST["passw"];
+	$info = $_POST["info"];
 
-	$sql = "INSERT INTO userinfo_tb (email, nickName, passw) VALUES ('$email', '$nickName','$passw')";
+	$sql = "INSERT INTO userinfo_tb (email, nickName, passw, info) VALUES ('$email', '$nickName', '$passw', '$info')";
 	mysql_query($sql);
 
 	$tip = "[ $nickName ]，恭喜您已注册成功！";
