@@ -1,0 +1,101 @@
+/* line 1, ../sass/reset.scss */
+html, body, h1, h2, h3, h4, h5, h6, div, dl, dt, dd, ul, ol, li, p, blockquote, pre, hr, figure, table, caption, th, td, form, fieldset, legend, input, button, textarea, menu {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 2, ../sass/reset.scss */
+header, footer, section, article, aside, nav, hgroup, address, figure, figcaption, menu, details {
+  display: block;
+}
+
+/* line 3, ../sass/reset.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 4, ../sass/reset.scss */
+caption, th {
+  text-align: left;
+  font-weight: normal;
+}
+
+/* line 5, ../sass/reset.scss */
+html, body, fieldset, img, iframe, abbr {
+  border: 0;
+}
+
+/* line 6, ../sass/reset.scss */
+i, cite, em, var, address, dfn {
+  font-style: normal;
+}
+
+/* line 7, ../sass/reset.scss */
+[hidefocus], summary {
+  outline: 0;
+}
+
+/* line 8, ../sass/reset.scss */
+li {
+  list-style: none;
+}
+
+/* line 9, ../sass/reset.scss */
+sup, sub {
+  font-size: 83%;
+}
+
+/* line 10, ../sass/reset.scss */
+pre, code, kbd, samp {
+  font-family: inherit;
+}
+
+/* line 11, ../sass/reset.scss */
+q:before, q:after {
+  content: none;
+}
+
+/* line 12, ../sass/reset.scss */
+textarea {
+  overflow: auto;
+  resize: none;
+}
+
+/* line 13, ../sass/reset.scss */
+label, summary {
+  cursor: default;
+}
+
+/* line 14, ../sass/reset.scss */
+a, button {
+  cursor: pointer;
+}
+
+/* line 15, ../sass/reset.scss */
+h1, h2, h3, h4, h5, h6, em, strong, b {
+  font-weight: bold;
+}
+
+/* line 16, ../sass/reset.scss */
+del, ins, u, s, a, a:hover {
+  text-decoration: none;
+}
+
+/* line 19, ../sass/reset.scss */
+.clearfix {
+  *zoom: 1;
+}
+
+/* line 22, ../sass/reset.scss */
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  line-height: 0;
+  content: "";
+}
+
+/* line 28, ../sass/reset.scss */
+.clearfix:after {
+  clear: both;
+}

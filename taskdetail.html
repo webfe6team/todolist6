@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>任务详情</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="renderer" content="webkit">
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scaleble=no">
+	<link rel="stylesheet" type="text/css" href="stylesheets/taskdetail.css">
+    <!--[if lt IE 9]>
+    <script src="js/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 9]>
+    <script src="js/css3-mediaqueries.js"></script>
+    <![endif]-->
+</head>
+<body>
+	<div class="content">
+		<!--有星标项目时显示，无星标项目时隐藏-->
+		<div class="perProject" id="star"style="display:none">
+			<h2 class="after">星标项目</h2>
+			<ul id="S_project">
+			</ul>
+		</div>
+		<!--个人新建项目-->
+		<div class="perProject">
+			<h2 class="after">个人项目</h2>
+			<ul id="J_proList">
+				<li class="project" >
+						<h3 class="proName">项目名称</h3>
+						<p class="explain">项目内容</p>
+						<div class="proFunction">
+							<a class="edit"  href="javascritp:void(0);"></a>
+							<a class="collect" href="javascritp:void(0);" onclick="star()"></a>
+						</div>
+				</li>
+
+			</ul>
+		</div>
+		<!--项目成功或暂停时将项目归入该类-->
+		<div class="perProject">
+			<h2>已归档项目</h2>
+			<a href="" class="display after">.显示</a>
+			<ul id="G_proList">
+			</ul>
+		</div>
+	</div>
+	<!--弹出层，新建或修改项目时出现-->
+	<div class="newProject" id = "J_newp">
+		<div class="npcontent">
+			<header > 
+				<h2>项目设置</h2> 
+				<a class="close" id="J_close">X</a>
+				<div class="logo">
+					<div class="proimg"></div>
+					<a href="" class="editimg"></a>
+				</div> 
+			</header>
+			<div class="proInfo">
+				<form action="">
+					<label for="">项目名称</label>
+					<input type="text" id="pjname">
+					<label for="">项目类别</label>
+					<select class="proType"> 
+						<option value="design" selected=""> 设计项目 </option>
+						<option value="internet"> 互联网项目 </option> 
+						<option value="education"> 教育项目 </option> 
+						<option value="media"> 媒体项目 </option> 
+						<option value="app"> 移动应用项目 </option> 
+						<option value="other"> 其他项目 </option> 
+					</select>
+					<label for="">项目简介</label>
+					<textarea class="" id="pjcontent" placeholder="介绍一下这个项目"></textarea>
+					<label class="">项目公开性</label>
+					<select class="">
+						<option value="public">公开项目（所有访客可见</option>
+						<option value="private" selected=""> 私有项目（仅项目成员可见） </option>
+					</select> 
+					<button class="" type="submit" id="crebtn" onclick="create()"> 保存 </button>
+				</form>
+			</div>
+	    </div>
+	</div>
+	<script type="text/javascript">
+
+
+
+
+	//弹出与关闭新建项目的弹出层
+	    function editPro () {
+	    	 var editp = document.querySelectorAll(".edit"),
+	    	    editc = document.getElementById("J_close");
+                var l = editp.length; 
+                for(var i = 0;i<l;i++){
+                	editp[i].addEventListener("click",function () {
+	    			document.getElementById('J_newp').style.display='block';
+	    		    });	
+                }
+                
+	    		editc.addEventListener("click",function () {
+	    			document.getElementById('J_newp').style.display='none';
+	    		});
+  	
+	    }
+       editPro();
+
+    //创建一个新项目
+	    function save(name,content){
+	    	//复制一个项目节点
+	    	
+	    	var pnode = document.querySelectorAll('.project')[0].cloneNode(true);
+                pnode.querySelectorAll("h3")[0].innerHTML = name;
+                pnode.querySelectorAll("p")[0].innerHTML = content;
+	    	var returnNode = document.getElementById('J_proList').appendChild(pnode); 
+	    	editPro ();
+                
+   	    }
+        
+
+	//弹出栏点击保存按钮创建一个新项目
+        function create(){
+        	
+             var name = document.getElementById('pjname').value;
+             var pjcontent = document.getElementById('pjcontent').value;
+             save("name","pjcontent");
+             alert("create a project");
+        }
+
+    //创建星标项目
+       function star(){
+       	    var collist = document.querySelectorAll(".collect");
+       	    var l = collist.length; 
+            for(var i = 0;i<l;i++){
+                collist[i].addEventListener("click",function () {
+
+	    		document.getElementById('star').style.display = "block";
+	    		var starPro = this.parentNode.parentNode.cloneNode(true);
+        	    var returnNode = document.getElementById('S_project').appendChild(starPro); 
+        	    return false;
+	    		});	
+            }
+        } 
+	</script>
+</body>
+</html>
