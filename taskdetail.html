@@ -25,14 +25,14 @@
 		</div>
 		<!--个人新建项目-->
 		<div class="perProject">
-			<h2 class="after">个人项目</h2>
+			<h2 class="after">个人任务</h2>
 			<ul id="J_proList">
 				<li class="project" >
-						<h3 class="proName">项目名称</h3>
-						<p class="explain">项目内容</p>
+						<h3 class="proName">任务名称</h3>
+						<p class="explain">任务内容</p>
 						<div class="proFunction">
-							<a class="edit"  href="javascritp:void(0);"></a>
-							<a class="collect" href="javascritp:void(0);" onclick="star()"></a>
+							<a class="edit"  href="javascritp:;"></a>
+							<a class="collect" href="javascritp:;" onclick="star()"></a>
 						</div>
 				</li>
 
@@ -40,7 +40,7 @@
 		</div>
 		<!--项目成功或暂停时将项目归入该类-->
 		<div class="perProject">
-			<h2>已归档项目</h2>
+			<h2>已归档任务</h2>
 			<a href="" class="display after">.显示</a>
 			<ul id="G_proList">
 			</ul>
@@ -50,34 +50,34 @@
 	<div class="newProject" id = "J_newp">
 		<div class="npcontent">
 			<header > 
-				<h2>项目设置</h2> 
+				<h2>任务设置</h2> 
 				<a class="close" id="J_close">X</a>
 				<div class="logo">
 					<div class="proimg"></div>
-					<a href="" class="editimg"></a>
+					<a href="javascritp:;" class="editimg"></a>
 				</div> 
 			</header>
 			<div class="proInfo">
 				<form action="">
-					<label for="">项目名称</label>
+					<label for="">任务名称</label>
 					<input type="text" id="pjname">
-					<label for="">项目类别</label>
+					<label for="">任务类别</label>
 					<select class="proType"> 
-						<option value="design" selected=""> 设计项目 </option>
-						<option value="internet"> 互联网项目 </option> 
-						<option value="education"> 教育项目 </option> 
-						<option value="media"> 媒体项目 </option> 
-						<option value="app"> 移动应用项目 </option> 
-						<option value="other"> 其他项目 </option> 
+						<option value="design" selected=""> 设计任务 </option>
+						<option value="internet"> 互联网任务 </option> 
+						<option value="education"> 教育任务 </option> 
+						<option value="media"> 媒体任务 </option> 
+						<option value="app"> 移动应用任务 </option> 
+						<option value="other"> 其他任务 </option> 
 					</select>
-					<label for="">项目简介</label>
+					<label for="">任务简介</label>
 					<textarea class="" id="pjcontent" placeholder="介绍一下这个项目"></textarea>
-					<label class="">项目公开性</label>
+					<label class="">任务公开性</label>
 					<select class="">
-						<option value="public">公开项目（所有访客可见</option>
-						<option value="private" selected=""> 私有项目（仅项目成员可见） </option>
+						<option value="public">公开任务（所有访客可见</option>
+						<option value="private" selected=""> 私有任务（仅项目成员可见） </option>
 					</select> 
-					<button class="" type="submit" id="crebtn" onclick="create()"> 保存 </button>
+					<button class="" type="button" id="crebtn" onclick="create()"> 保存 </button>
 				</form>
 			</div>
 	    </div>
@@ -123,8 +123,8 @@
         	
              var name = document.getElementById('pjname').value;
              var pjcontent = document.getElementById('pjcontent').value;
-             save("name","pjcontent");
-             alert("create a project");
+             save(name,pjcontent);
+            
         }
 
     //创建星标项目
