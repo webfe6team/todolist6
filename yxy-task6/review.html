@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	<title>回顾 · Teambition</title>
+  	<meta charset="utf-8">
+  	<script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+  	<!--<script src="history.js"></script>-->
+  	<script>
+  	$(document).ready(function(){
+  		$.ajax({
+        type: "post",
+        url: "TreatGetInfo.php",
+        data: {email: email},
+        dataType: "text",
+        success: function(data) {
+        	var list=JSON.parse(data);
+        	//插入已完成任务
+        	for(var i=0;i<list.completedTask.length;i++){
+        		var completedList=$("<p></p>").text(list.completedTask[i]);
+        		$("#yxy-completedTask").append(completedList);
+        	}
+        	//插入已删除任务
+        	for(var j=0;j<list.completedTask.length;j++){
+        		var deletedList=$("<p></p>").text(list.deletedTask[j]);
+        		$("#yxy-completedTask").append(deletedList);
+        	}
+            //$("#task").html(data);
+            //alert(JSON.parse(data).currentTask[0].taskName);
+        },
+        error: function(data) {
+            alert("数据请求失败！抱歉！");
+        }
+    });
+  	});
+  	</script>
+  </head>
+  <body>
+  	<div class="yxy-task">
+  	  <h1>已完成任务</h1>
+  	  <div id="yxy-completedTask"></div>
+  	  <h1>已删除任务</h1>
+  	  <div id="yxy-deletedTask"></div>
+  	</div>
+  </body>
+</html>
