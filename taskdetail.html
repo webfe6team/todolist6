@@ -8,6 +8,7 @@
 	<meta name="renderer" content="webkit">
 	<meta name="viewport" content="width=device-width,initial-scale=1,user-scaleble=no">
 	<link rel="stylesheet" type="text/css" href="stylesheets/taskdetail.css">
+	
     <!--[if lt IE 9]>
     <script src="js/html5.js"></script>
     <![endif]-->
@@ -16,75 +17,117 @@
     <![endif]-->
 </head>
 <body>
-	<div class="content">
-		<!--有星标项目时显示，无星标项目时隐藏-->
-		<div class="perProject" id="star"style="display:none">
-			<h2 class="after">星标项目</h2>
-			<ul id="S_project">
-			</ul>
-		</div>
-		<!--个人新建项目-->
-		<div class="perProject">
-			<h2 class="after">个人任务</h2>
-			<ul id="J_proList">
-				<li class="project" >
-						<h3 class="proName">任务名称</h3>
-						<p class="explain">任务内容</p>
-						<div class="proFunction">
-							<a class="edit"  href="javascritp:;"></a>
-							<a class="collect" href="javascritp:;" onclick="star()"></a>
-						</div>
-				</li>
-
-			</ul>
-		</div>
-		<!--项目成功或暂停时将项目归入该类-->
-		<div class="perProject">
-			<h2>已归档任务</h2>
-			<a href="" class="display after">.显示</a>
-			<ul id="G_proList">
-			</ul>
-		</div>
-	</div>
-	<!--弹出层，新建或修改项目时出现-->
-	<div class="newProject" id = "J_newp">
-		<div class="npcontent">
-			<header > 
-				<h2>任务设置</h2> 
-				<a class="close" id="J_close">X</a>
-				<div class="logo">
-					<div class="proimg"></div>
-					<a href="javascritp:;" class="editimg"></a>
-				</div> 
-			</header>
-			<div class="proInfo">
-				<form action="">
-					<label for="">任务名称</label>
-					<input type="text" id="pjname">
-					<label for="">任务类别</label>
-					<select class="proType"> 
-						<option value="design" selected=""> 设计任务 </option>
-						<option value="internet"> 互联网任务 </option> 
-						<option value="education"> 教育任务 </option> 
-						<option value="media"> 媒体任务 </option> 
-						<option value="app"> 移动应用任务 </option> 
-						<option value="other"> 其他任务 </option> 
-					</select>
-					<label for="">任务简介</label>
-					<textarea class="" id="pjcontent" placeholder="介绍一下这个项目"></textarea>
-					<label class="">任务公开性</label>
-					<select class="">
-						<option value="public">公开任务（所有访客可见</option>
-						<option value="private" selected=""> 私有任务（仅项目成员可见） </option>
-					</select> 
-					<button class="" type="button" id="crebtn" onclick="create()"> 保存 </button>
-				</form>
+	<div class="liuya">
+		<div class="content">
+			<!--有星标项目时显示，无星标项目时隐藏-->
+			<div class="perProject" id="star"style="display:none">
+				<h2 class="after">星标项目</h2>
+				<ul id="S_project">
+				</ul>
 			</div>
-	    </div>
+			<!--个人新建项目-->
+			<div class="perProject">
+				<h2 class="after">个人任务</h2>
+				<ul id="J_proList">
+					<li class="project" >
+							<h3 class="proName">任务名称</h3>
+							<p class="explain">任务内容</p>
+							<div class="proFunction">
+								<a class="edit"  href="javascritp:;"></a>
+								<a class="collect" href="javascritp:;" onclick="star()"></a>
+							</div>
+					</li>
+
+				</ul>
+			</div>
+			<!--项目成功或暂停时将项目归入该类-->
+			<div class="perProject">
+				<h2>已归档任务</h2>
+				<a href="" class="display after">.显示</a>
+				<ul id="G_proList">
+				</ul>
+			</div>
+		</div>
+		<!--弹出层，新建或修改项目时出现-->
+		<div class="newProject" id = "J_newp">
+			<div class="npcontent">
+				<header > 
+					<h2>任务设置</h2> 
+					<a class="close" id="J_close">X</a>
+					<div class="logo">
+						<div class="proimg"></div>
+						<a href="javascritp:;" class="editimg"></a>
+					</div> 
+				</header>
+				<div class="proInfo">
+					<form action="">
+						<label for="">任务名称</label>
+						<input type="text" id="pjname">
+						<label for="">任务类别</label>
+						<select class="proType"> 
+							<option value="design" selected=""> 设计任务 </option>
+							<option value="internet"> 互联网任务 </option> 
+							<option value="education"> 教育任务 </option> 
+							<option value="media"> 媒体任务 </option> 
+							<option value="app"> 移动应用任务 </option> 
+							<option value="other"> 其他任务 </option> 
+						</select>
+						<label for="">任务简介</label>
+						<textarea class="" id="pjcontent" placeholder="介绍一下这个项目"></textarea>
+						<label class="">任务公开性</label>
+						<select class="">
+							<option value="public">公开任务（所有访客可见</option>
+							<option value="private" selected=""> 私有任务（仅项目成员可见） </option>
+						</select> 
+						<button class="" type="button" id="crebtn"> 保存 </button>
+					</form>
+				</div>
+		    </div>
+		</div>
 	</div>
 	<script type="text/javascript">
 
+	//创建request对象
+        function createRequest() {
+  			try {
+    			request = new XMLHttpRequest();
+ 			} catch (tryMS) {
+    				try {
+      					request = new ActiveXObject("Msxml2.XMLHTTP");
+    				} catch (otherMS) {
+      						try {
+        						request = new ActiveXObject("Microsoft.XMLHTTP");
+      						} catch (failed) {
+        						request = null;
+      						}
+    					}
+  				}	
+  				return request;
+		}
 
+
+    //获取项目详情
+        function getDetails(itemName) {
+        	request = createRequest();
+  			if (request == null) {
+    			alert("Unable to create request");
+    			return;
+  			}
+  			var url= "getDetails.php?ImageID=" + escape(itemName);
+  			request.open("GET", url, true);
+  			request.onreadystatechange = displayDetails;
+  			request.send(null);
+			}
+
+    //展示项目详情
+    function displayDetails() {
+    	if (request.readyState == 4) {
+    		if (request.status == 200) {
+      				//将具体的数据返回到表单
+    		}
+  		}
+	}
+    
 
 
 	//弹出与关闭新建项目的弹出层
