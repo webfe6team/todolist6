@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="stylesheets/taskdetail.css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/ly_task.css">
+    
+    <script type="text/javascript">
+    var curpanel;
+   function edit(){
+        document.getElementById('ly-nofinished-task-ul').addEventListener('click',function(e){
+            if(e.target && e.target.nodeName.toUpperCase == "LI"){alert('li');}
+            alert("noli");
+
+        });
+   }
+
+    function addtask(obj){
+        curpanel = obj;
+        document.getElementById("J_newp").style.display="block";
+        editc = document.getElementById("J_close");
+        editc.addEventListener("click",function () {
+                    document.getElementById('J_newp').style.display='none';
+                });
+
+        
+    }
+
+
+        function save(name,content,obj){
+          
+            var parentNode = obj.parentNode.parentNode.getElementsByTagName('ul')[0];
+            var ul;
+            if(parentNode.id == 'ly-nofinished-task-ul'){
+                ul = document.getElementById("ly-nofinished-task-ul");
+            }
+            else  ul = document.getElementById("ly-finished-task-ul");
+
+            var pnode = ul.getElementsByTagName('li')[0].cloneNode(true);
+                pnode.querySelectorAll("h1")[0].innerHTML = name;
+                pnode.querySelectorAll("p")[0].innerHTML = content;    
+            var returnNode = ul.appendChild(pnode); 
+            document.getElementById('J_newp').style.display='none';
+
+          
+                
+        }
+        
+
+    //弹出栏点击保存按钮创建一个新任务
+        function create(obj){
+                
+                var name = document.getElementById('pjname').value;
+                if(name!=null&&name!=""){
+                    var pjcontent = document.getElementById('pjcontent').value;
+                    save(name,pjcontent,obj);
+                }
+                else
+                alert("请输入任务名！")
+        }
+
+
+    </script>
+
+    
+</head>
+<body>
+    <div class="ly-border-view">
+        <header class="ly-border-header">
+            <div class="ly-tasklist-bar">
+                <a class="ly-tasklist-bar-toggler">
+                    <strong class="ly-border-title">任务版</strong>
+                    <span class="ly-icon-down"></span>
+                </a>
+                
+            </div>
+
+        </header>
+        <section class="ly-content">
+            <ul class="ly-tasklist">
+                <li class="ly-list nodo">
+                    <header class="ly-li-header">
+                    
+                        
+                    
+                    <span class="ly-nodo-span">
+                        未完成
+                    </span>
+                     
+                    </header>
+                    
+                    <div class="ly-addtask">
+                           
+                            <ul class="ly-taskdone" id="ly-nofinished-task-ul">
+                            <li class = "ly-task-li">
+                                <div class="ly-detail-task">
+                                  
+                                    <h1>
+                                        任务名
+                                    </h1>
+                                    <p>
+                                        任务描述
+                                    </p>
+                                </div>
+                            </li>
+                                
+                            </ul>
+                    
+                            <a class="ly-task-creator">
+                                <span onclick="addtask(this)" class="ly-puls">
+                                    添加任务
+                                </span>
+                            </a>
+                    </div>                    
+                </li>
+                
+                 <li class="ly-list finished">
+                    <header class="ly-li-header">
+                    <span class="ly-nodo-span">
+                        已完成
+                    </span>
+                     
+                    </header>
+                    
+                    <div class="ly-addtask">
+                            <ul class="ly-taskdone" id="ly-finished-task-ul">
+                                  <li class = "ly-task-li">
+                                        <div class="ly-detail-task">
+                                           
+                                            <h1>
+                                                任务名
+                                            </h1>
+                                            <p>
+                                                任务描述
+                                            </p>
+                                        </div>
+                                    </li>
+                            </ul>
+
+                            <a class="ly-task-creator">
+                                <span onclick="addtask(this)" class="ly-puls">
+                                    添加任务
+                                </span>
+                            </a>
+                      
+                        
+                    </div>
+                </li>
+                
+            </ul>
+            
+        </section>
+        
+    </div>
+    <!-- 弹出层 -->
+    <div class="newProject" id = "J_newp">
+        <div class="npcontent">
+            <header > 
+                <h2>任务设置</h2> 
+                <a class="close" id="J_close">X</a>
+                <div class="logo">
+                    <div class="proimg"></div>
+                    <a href="javascritp:;" class="editimg"></a>
+                </div> 
+            </header>
+            <div class="proInfo">
+                <form action="">
+                    <label for="">任务名称</label>
+                    <input type="text" required="required" id="pjname" >
+                    <label for="">任务类别</label>
+                    <select class="proType"> 
+                        <option value="design" selected=""> 设计任务 </option>
+                        <option value="internet"> 互联网任务 </option> 
+                        <option value="education"> 教育任务 </option> 
+                        <option value="media"> 媒体任务 </option> 
+                        <option value="app"> 移动应用任务 </option> 
+                        <option value="other"> 其他任务 </option> 
+                    </select>
+                    <label for="">任务简介</label>
+                    <textarea class="" id="pjcontent" placeholder="介绍一下这个项目"></textarea>
+                    <label class="">任务公开性</label>
+                    <select class="">
+                        <option value="public">公开任务（所有访客可见</option>
+                        <option value="private" selected=""> 私有任务（仅项目成员可见） </option>
+                    </select> 
+                    <button class="" type="button" id="crebtn" onclick="create(curpanel)" > 保存 </button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="ly-edit-task">
+        <h1>
+        删除
+        </h1>
+        <h2>
+        已完成
+        </h2>
+        
+    </div>
+</body>
+<script type="text/javascript">
+   
+</script>
+</html>

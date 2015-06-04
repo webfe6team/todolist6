@@ -1,0 +1,167 @@
+        body{ font-family: Helvetica Neue,Microsoft Yahei,Hiragino Sans GB,WenQuanYi Micro Hei,sans-serif;}
+        .ly-border-view{
+            position: fixed;
+            top: 100px;
+            right: 60px;
+            bottom: 0;
+            left: 0;
+            
+        }
+        .ly-tasklist-bar-toggler{
+            position: relative;
+            max-width: 100%;
+            padding-left: 25px;
+            
+
+        }
+        .ly-border-header{
+            position: relative;
+            /*background-color: rgb(255,255,0);*/
+            
+
+        }
+        .ly-border-view{
+            
+
+        }
+        .ly-border-title{
+            font-size: 16px;
+            font-weight: 700px;
+        }
+        .ly-content{
+            position: absolute;
+            top: 49px;
+            left: -1px;
+            right: 0;
+            bottom: 0;
+            
+            border-style: solid;
+            border-width: 1px 0 0 1px;
+            border-color: #d9d9d9;
+        }
+        .ly-tasklist{
+            position: relative;
+            padding: 10px;
+            white-space: nowrap;
+            overflow-x:auto;
+            overflow-y:hidden;
+            height: 100%;
+        }
+        .ly-list{
+            position: relative;
+            display: inline-block;
+            margin-right: 10px;
+            height: 100%;
+            width: 280px;
+            border:1px solid rgba(0,0,0,.12);
+            border-radius: 3px;
+            background-color: #eee;
+
+        }
+        .ly-li-header{
+            position: absolute;
+            cursor: move;
+            /*background-color: red;*/
+            top: 0;
+            height: 40px;
+            width: 100%;
+            padding: 10px 25px 9px 15px;
+            font-size: 15px;
+            font-weight: 700;
+         
+        }
+        .ly-nodo-span{
+            font-size: 12px;
+            display: inline-block;
+
+        }
+        .ly-addtask{
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            padding-top: 40px;
+            /*background-color: red;*/
+            /*box-sizing:border-box;*/
+        }
+        .ly-task-creator{
+            color: #03a8f4!important;
+            transition:color 218ms ease;
+            cursor: pointer;
+            text-decoration: none;
+            background-color: transparent;
+            display: inline-block;
+            width: 100%;
+            padding: 10px 15px;
+            font-size: 15px;
+
+
+        }
+        .ly-taskdone{
+            margin-bottom: 0;
+            
+        }
+        .ly-task-li{
+            position: relative;
+            background-color: rgba(255,255,255,.5);
+            border-color: rgba(0,0,0,.12);
+            margin-bottom: 10px;
+            border-width: 1px 0;
+
+        }
+        .ly-task-create-div{
+            display: block;
+            width: 100%;
+            margin-bottom: 5px;
+            background-color: #fff;
+            border-top: 1px solid rgba(0,0,0,.12);
+            border-bottom: 1px solid rgba(0,0,0,.12)
+        }
+        .ly-task-create-form{
+            opacity: 1;
+            position: relative;
+            padding: 10px;
+            display: block;
+            margin-top: 0em;
+        }
+        .ly-task-content-textarea{
+            height: 60px;
+            width: 100%;
+            resize:vertical;
+            background-color: #fff;
+            border:1px solid #d9d9d9;
+            border-radius: 3px;
+            line-height: 20px;
+            display: block;
+
+        }
+        .ly-priority-handler{
+            display: inline-block;
+            padding: 15px 0;
+            color: grey;
+            cursor: pointer;
+            background-color: transparent;
+        }
+        .ly-detail-task{
+            line-height: 20px;
+            padding-left: 20px;
+
+
+        }
+        .ly-detail-task-check{
+            display: inline;
+        }
+        .ly-edit-task{
+            position: relative;
+            width: 80px;
+            height: 80px;
+            display: none;
+
+        }
+        h1,h2{
+
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+        .li{
+            padding:3px;
+        }
