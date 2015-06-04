@@ -107,17 +107,17 @@
 
 
     //获取项目详情
-        function getDetails(itemName) {
+        function getDetails(taskName) {
         	request = createRequest();
   			if (request == null) {
     			alert("Unable to create request");
     			return;
   			}
-  			var url= "getDetails.php?ImageID=" + escape(itemName);
+  			var url= "getDetails.php?taskname=" + escape(taskName);
   			request.open("GET", url, true);
   			request.onreadystatechange = displayDetails;
   			request.send(null);
-			}
+		}
 
     //展示项目详情
     function displayDetails() {
