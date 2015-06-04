@@ -1,30 +1,239 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-    <title>个人项目</title>
-    <link href="../css/mui.min.css" rel="stylesheet"/>
-    <link rel="stylesheet" href="../css/app.css" />
-</head>
-<body>
-	<header class="mui-bar mui-bar-nav tg-header">
-		<a id="info" class="mui-icon mui-icon mui-icon-arrowleft mui-pull-left"></a>
-		<a id="info" class="mui-icon mui-icon mui-icon-gear mui-pull-right"></a>
-		<h1 class="mui-title">示例项目</h1>
-	</header>
-	<script src="../js/mui.min.js"></script>
-	<script>
-		mui.init({
-			subpages:[{
-				url:'bodyPageMain.html',
-			    id:'bodyPageMain.html',
-			   	styles:{
-			    	top:'45px',//mui标题栏默认高度为45px；
-			        bottom:'0px'//默认为0px，可不定义；
-			    }
-			}]
-		});
-	</script>
-</body>
+
+	<head>
+		<meta charset="utf-8">
+		<title>Hello MUI</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="../css/mui.min.css">
+		<link rel="stylesheet" type="text/css" href="../css/app.css"/>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav tg-header">
+			<a id="info" class="mui-icon mui-icon mui-icon-arrowleft mui-pull-left mui-action-back"></a>
+			<a id="info" class="mui-icon mui-icon mui-icon-gear mui-pull-right"></a>
+			<h1 class="mui-title">示例项目</h1>
+		</header>
+		<!--弹出层-->
+		<div id="dimmer">
+			<form>
+			<header class="mui-bar mui-bar-nav tg-header" style="position: static;">
+				<a id="cancel" class="mui-pull-left">取消</a>
+				<a id="success" class="mui-pull-right">完成</a>
+				<h1 class="mui-title">新任务</h1>
+			</header>
+			<section class="itemCate">
+				示例项目，示例项目分组，进行中
+			</section>
+			<div class="taskTitle">
+				<textarea name="" placeholder="任务内容"></textarea>
+				<div class="taskFooter">
+					<ul>
+						<li>
+							<img src="../images/newdate.png" alt="" />
+							<span>截止时间</span>
+							<input type="date" placeholder="2015年6月3日"/>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="newTask-title">
+				参与者
+			</div>
+			<div class="newTask-href">
+				<a><span class="mui-icon mui-icon-contact" style="margin-right:10px;"></span>CaelumTian</a>
+			</div>
+			<div class="newTask-title">
+				更多
+			</div>
+			<ul class="mui-table-view mui-table-view-chevron">
+				<li class="mui-table-view-cell mui-collapse">
+					<a class="mui-navigate-right" href="#">优先级</a>
+					<ul class="mui-table-view mui-table-view-chevron">
+						<li class="mui-table-view-cell" style="padding-top: 3px;padding-bottom: 3px;">
+							<div class="mui-input-row mui-radio">
+								<label>普通</label>
+								<input name="checkbox1" type="radio" checked>
+							</div>
+						</li>
+						<li class="mui-table-view-cell" style="padding-top: 3px;padding-bottom: 3px;">
+							<div class="mui-input-row mui-radio">
+								<label>紧急</label>
+								<input name="checkbox1" type="radio">
+							</div>
+						</li>
+						<li class="mui-table-view-cell" style="padding-top: 3px;padding-bottom: 3px;">
+							<div class="mui-input-row mui-radio">
+								<label>非常紧急</label>
+								<input name="checkbox1" type="radio">
+							</div>
+						</li>
+					</ul>
+				</li>
+			</ul>
+			<div class="newTask-href">
+				<span class="mui-icon mui-icon-compose" style="margin-right:10px;"></span>添加备注
+			</div>
+			</form>
+		</div>
+		<!--结束层-->
+		<!--下拉刷新容器-->
+		<div id="pullrefresh" class="mui-content mui-scroll-wrapper">
+			<div class="mui-scroll">
+				<!--
+                	头部选项卡
+                -->
+				<section class="users">
+					<nav>
+						<a id="donewTask">
+							<img src="../images/newtask.png" alt="" />
+							<span>新任务</span>
+						</a>
+						<a>
+							<img src="../images/fengxiang.png" alt="" />
+							<span>新分享</span>
+						</a>
+						<a>
+							<img src="../images/newfile.png" alt="" />
+							<span>新文件</span>
+						</a>
+						<a>
+							<img src="../images/newdate.png" alt="" />
+							<span>新日程</span>
+						</a>
+					</nav>
+				</section>
+				<section class="itemsCate">
+					<ul>
+						<li>
+							任务版
+							<span class="timeTip">所有9项</span>
+						</li>
+						<li>日程表</li>
+						<li>分享墙</li>
+						<li>文件库</li>
+					</ul>
+				</section>
+				<div style="padding-left: 20px;font-size: 13px;margin-bottom: 5px;margin-top: 15px;color:#5E5E5E;">
+					最新动态
+				</div>
+				<!--数据列表-->
+				<ul class="mui-table-view mui-table-view-chevron newState" style="background-color: #EFEFF4">
+					<li class="taskContent">
+						<div class="taskTop">
+							<img src="../images/iconTask.png" alt="" />
+							<span class="taskPic">
+								<p>CaelumTian创建了任务</p>
+								<h5>第一个任务测试第一个任务测试第一个任务测试</h5>
+							</span>
+							<span class="taskTime">
+								6小时前<span class="mui-icon mui-icon-arrowright"></span>
+							</span>
+						</div>
+						<div class="taskBottom">
+							<span class="mui-icon mui-icon-star taskZan">&nbsp;赞</span>
+							<span class="mui-icon mui-icon-flag taskPing">&nbsp;评论</span>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script>
+			mui.init({
+				pullRefresh: {
+					container: '#pullrefresh',
+					down: {
+						callback: pulldownRefresh
+					},
+					up: {
+						contentrefresh: '正在加载...',
+						callback: pullupRefresh
+					}
+				}
+			});
+			/**
+			 * 下拉刷新具体业务实现
+			 */
+			function pulldownRefresh() {
+				setTimeout(function() {
+					var table = document.body.querySelector('.newState');
+					var cells = document.body.querySelectorAll('.mui-table-view-cell');
+					for (var i = cells.length, len = i + 2; i < len; i++) {
+						var li = document.createElement('li');
+						li.className = 'taskContent';
+						li.innerHTML = '<div class="taskTop"><img src="../images/iconTask.png" alt="" /><span class="taskPic"><p>CaelumTian创建了任务</p><h5>第一个任务测试第一个任务测试第一个任务测试</h5></span><span class="taskTime">6小时前<span class="mui-icon mui-icon-arrowright"></span></span></div><div class="taskBottom"><span class="mui-icon mui-icon-star">&nbsp;赞</span><span class="mui-icon mui-icon-flag">&nbsp;评论</span></div>';
+						//下拉刷新，新纪录插到最前面；
+						table.insertBefore(li, table.firstChild);
+					}
+					mui('#pullrefresh').pullRefresh().endPulldownToRefresh(); //refresh completed
+				}, 1500);
+			}
+			var count = 0;
+			/**
+			 * 上拉加载具体业务实现
+			 */
+			function pullupRefresh() {
+				setTimeout(function() {
+					mui('#pullrefresh').pullRefresh().endPullupToRefresh((++count > 2)); //参数为true代表没有更多数据了。
+					var table = document.body.querySelector('.mui-table-view');
+					var cells = document.body.querySelectorAll('.mui-table-view-cell');
+					for (var i = cells.length, len = i + 20; i < len; i++) {
+						var li = document.createElement('li');
+						li.className = 'mui-table-view-cell';
+						li.innerHTML = '<a class="mui-navigate-right">Item ' + (i + 1) + '</a>';
+						table.appendChild(li);
+					}
+				}, 1500);
+			}
+			/****************************************************************/
+			var donewTask = document.getElementById("donewTask"),
+				dimmer = document.getElementById("dimmer"),
+				cancel = document.getElementById("cancel"),
+				success = document.getElementById("success");
+			donewTask.addEventListener("tap", function(event){
+				dimmer.style.top = "0%";
+			},false)
+			success.addEventListener("tap", function(event){
+				var value1 = document.getElementsByTagName("textarea")[0].value;  //内容
+				var value2 = "CaelumTian 创建了任务";   //任务动作
+				var value3 = "刚刚";    //值
+				var table = document.body.querySelector('.newState');
+				var li = document.createElement('li');
+				li.className = 'taskContent';
+				var tempText = '<div class="taskTop"><img src="../images/iconTask.png" alt="" /><span class="taskPic"><p>{0}</p><h5>{1}</h5></span><span class="taskTime">{2}<span class="mui-icon mui-icon-arrowright"></span></span></div><div class="taskBottom"><span class="mui-icon mui-icon-star">&nbsp;赞</span><span class="mui-icon mui-icon-flag">&nbsp;评论</span></div>';
+				//下拉刷新，新纪录插到最前面；
+				li.innerHTML = format(tempText, value2, value1, value3);
+				if(value1 !== "") {
+					table.insertBefore(li, table.firstChild);
+					_afterDimmer();
+				}else{
+					_afterDimmer();
+				}
+			})
+			cancel.addEventListener("tap", function(event){
+				_afterDimmer();
+			})
+			function _afterDimmer() {
+				document.getElementsByTagName("textarea")[0].blur();
+				document.getElementsByTagName("textarea")[0].value = "";
+				dimmer.style.top = "100%";
+			}
+			function format(string, args) {
+			    var array = [].slice.call(arguments,1);
+			    return string.replace(/\{([^{}]+)\}/gm,function(match,name){ 
+			        var index = Number(name);   //尝试是不是数字;
+			        if(index >= 0) {
+			            return array[index];
+			        }
+			        if(args && args[name] !== void 0) {
+			            return args[name];
+			        }
+			        return '';   //都没有的情况下
+			    })
+			}
+		</script>
+	</body>
 </html>
