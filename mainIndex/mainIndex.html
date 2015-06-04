@@ -1,0 +1,588 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="./css/reset.css">
+	<link rel="stylesheet" href="./css/tgybase.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	<script type="text/javascript" src="js/index.js"></script>
+	<style>
+		#top-dimmer {
+			padding-left: 200px;
+  			padding-right: 200px;
+			position: fixed;
+		  	top: -100%;
+		  	height: 100%;
+			left: 0px;
+			right: 0px;
+			z-index: 1010;
+			background-color: #EDEDED;
+			-webkit-transition: all 400ms ease-in-out;
+				-ms-transition: all 400ms ease-in-out;
+					transition: all 400ms ease-in-out;
+		}
+		/*我的任务*/
+		#w-task-top{
+			width: 100%;
+			height: 40px;
+			margin: 25px auto 0;
+			position: relative;
+			border-bottom: 1px solid #ccc;
+		}
+		#w-task-top p{
+			height: 30px;
+			width: 70px;
+			display: block;
+			text-align: center;
+			line-height: 30px;
+			position: absolute;
+			bottom: 0;
+			border-bottom: 5px solid rgb(3,169,244);
+		}
+		#w-finish,#w-unfinish{
+			overflow: hidden;
+		}
+		#w-task{
+			width: 1000px;
+			overflow: hidden;
+			margin: 20px auto;
+			background: #fff;
+		}
+		#w-task p{
+			font-size: 18px;
+			height: 40px;
+			width: 96%;
+			line-height: 40px;
+			border-bottom: 5px solid rgb(238,238,238);
+			margin: 20px auto 0;
+		}
+		#w-task p span{
+			margin-left: 20px;
+			font-size: 14px;
+			color: rgb(3,169,244);
+		}
+		.w-task-root {
+			margin: 5px 20px 0;
+			padding: 10px 0 5px;
+		}
+		.w-task-root>span {
+			font-size: 14px;
+			font-weight: bold;
+			color: #383838;
+		}
+		.w-task-item {
+			border-left: 10px solid transparent;
+			margin-bottom: 3px;
+			padding:8px 0px 8px 0px;
+			-webkit-transition: all 500ms;
+				-ms-transition: all 500ms;
+					transition: all 500ms;
+		}
+		.w-task-item:hover {
+			border-left: 10px solid #CBCBCB;
+			background-color: #EDEDED;
+			-webkit-transition: all 500ms;
+				-ms-transition: all 500ms;
+					transition: all 500ms;
+		}
+		.w-task-content {
+			margin-left: 10px;
+			padding: 5px 0;
+			cursor: pointer;
+			display: inline-block;
+			vertical-align: -5px;
+			width: 50%;
+			/* word-break: break-all; */
+			overflow: hidden;
+			white-space: nowrap;
+			text-overflow: ellipsis;
+		}
+		.w-task-item a {
+			display: inline-block;
+  			font-size: 14px;
+		}
+		.w-task-item a:hover {
+			color:#03a9f4;
+		}
+		.w-task-item input {
+			width: 20px;
+			height: 20px;
+			display: inline-block;
+			margin-left: 20px;
+		}
+		.w-task-delete {
+			text-decoration: line-through;
+			color: #909090;
+		}
+	</style>
+</head>
+<body>
+	<div id="top-dimmer" style="top:-100%">
+		<div id = "w-task-top">
+			<p>我的任务</p>
+		</div>
+		<div id = "w-task">
+			<p>今天的任务</p>
+			<div id = "w-finish">
+				<ul>
+					<li class="w-task-root">
+						<span>示例项目</span>
+					</li>
+				</ul>
+			</div>
+			<div id = "w-unfinish">
+				<p>已完成的任务</p>
+				<ul>
+					<li class="w-task-root">
+						<span>示例项目</span>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!--引入的头部-->
+	<div id="container" style="z-index: 2000;">
+		<div id = "w-nav">
+			<span>teambition</span>
+			<ul id = "elastic_nav_ul">
+				<li>项目</li>
+				<li>组织</li>
+				<li id="w-mine">
+					我的
+				</li>
+				<li>日历</li>
+				<li>邮箱</li>
+			</ul>
+			
+			<div id = "w-nav-right">
+				<a href = "#"><span id = "w-create">
+					<h1>+</h1>创建</span>
+				</a>
+				<a href = "#"><span id = "w-uesr">
+					<img src = "images/user.png" alt = "头像" class = "w-user"/>王建兵</span>
+				</a>
+			</div>
+			
+		</div>	
+		<div id = "w-hidden">
+			<ul class = "w-create-hiden w-ul1" style="position:fixed;">
+				<li><a href = "#"><img src = "images/xm.png" alt = ""/>项目</a></li>
+				<li><a href = "#"><img src = "images/zz.png" alt = ""/>组织</a></li>
+				<li><a href = "#"><img src = "images/rw.png" alt = ""/>任务</a></li>
+				<li><a href = "#"><img src = "images/wj.png" alt = ""/>文件</a></li>
+				<li><a href = "#"><img src = "images/rc.png" alt = ""/>日程</a></li>
+				<li><a href = "#"><img src = "images/fx.png" alt = ""/>分享</a></li>
+			</ul>
+			<ul class = "w-create-hiden w-ul2" style="position:fixed;">
+				<li><a href = "#">个人设置</a></li>
+				<li><a href = "#">支付中心</a></li>
+				<li><a href = "#">快捷键</a></li>
+				<li><a href = "#">下载应用</a></li>
+				<li><a href = "#">帮助中心</a></li>
+				<li><a href = "#">退出登录</a></li>
+			</ul>
+		</div>
+	</div>
+	<!-- 我的任务-->
+	<!-- 侧边栏 -->
+	<div id="aside"></div>
+	<!--头部结束-->
+	<section class="tg-container">
+		<nav class="tg-header">
+			<div class="tg-projects">
+				示例项目
+			</div>
+			<ul class="clearfix">
+				<li><a href="" class="tg-headNavActive">主页</a></li>
+				<li><a href="">任务版</a></li>
+				<li><a href="">分享墙</a></li>
+			</ul>
+		</nav>
+		<article class="tg-main clearfix">
+			<div class="tg-left">
+				<div class="tg-left-header clearfix">
+					<div class="tg-iconHead"></div>
+					<ul class="tg-left-nav clearfix" id="tg-nav">
+						<li date-item="ntask">
+							<a>
+								<i class="icon-task tgy-base-icon"></i>
+								<span>新任务</span>
+							</a>
+						</li>
+						<li date-item="nshare">
+							<a>
+								<i class="icon-books tgy-base-icon"></i>
+								<span>新分享</span>
+							</a>
+						</li>
+						<li date-item="ndate">
+							<a>
+								<i class="icon-earth tgy-base-icon"></i>
+								<span>新日程</span>
+							</a>
+						</li>
+						<li date-item="nfile">
+							<a>
+								<i class="icon-word tgy-base-icon"></i>
+								<span>新文件</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="tg-left-lists">
+					<ul class="tg-items" date-time="2015/6/2">
+						<li class="tg-li-root">
+							<h4>今日动态</h4>
+						</li>
+						<!--循环插入节点，参照根结点插入-->
+					</ul>
+				</div>
+			</div>
+			<div class="tg-right">
+				<div class="tg-r-task">
+					<header class="tg-r-head">
+						项目任务统计
+					</header>
+					<ul class="tg-r-total clearfix"> 
+						<li>
+							<span class="tg-r-title1">任务总数</span>
+							<span class="tg-r-num">10</span>
+						</li>
+						<li>
+							<span class="tg-r-title1">已完成任务</span>
+							<span class="tg-r-num2">5</span>
+						</li>
+						<li>
+							<span class="tg-r-title1">待完成任务</span>
+							<span class="tg-r-num3">12</span>
+						</li>
+					</ul>
+				</div>
+				<div class="tg-r-form">
+					<header class="tg-r-head">
+						最近任务进展
+					</header>
+					<div id="tg-form" style="height:200px;width:365px;">
+						
+					</div>
+				</div>
+			</div>
+		</article>
+	</section>
+
+	<!--   悬浮层代码 -->
+	<div id="dimmer" style="display:none;">
+		<div id="tg-create-task">
+			<header class="tg-dim-head clearfix">
+				<span class="tg-dim-title">创建新任务</span>
+				<i class="icon-cross tg-dim-cross" id="tgyCross"></i>
+			</header>
+			<section class="tg-dim-main">
+				<textarea name="" id="tg-taskContent" placeholder="任务信息"></textarea>
+				<div class="tg-dim-pic">
+					<ul class="clearfix">
+						<li>
+							<h6>执行者</h6>
+							<div class="tg-pic-main">
+								<span class="tg-sm-head tg-floatBlock">
+									<img src="./image/person.jpg" alt="">
+								</span>
+								<span class="tg-pic-name">
+									CaelumTian
+								</span>
+							</div>
+						</li>
+						<li>
+							<h6>选择截止时间</h6>
+							<div class="tg-pic-main">
+								<input type="date">
+							</div>
+						</li>
+						<li id="tg-important">
+							<h6>优先级</h6>
+							<div class="tg-pic-main">
+								<span id="tg-pic-yx">普通</span>
+								<ul>
+									<li>
+										<span class="tg-check" style="color:rgb(56, 56, 56);" id="resetImp">普通</span>
+									</li>
+									<li>
+										<span style="color:#ff9800;">紧急</span>
+									</li>
+									<li>
+										<span style="color:#ff0000;">非常紧急</span>
+									</li>
+								</ul>
+							</div>
+						</li>
+						<li>
+							<h6>重复</h6>
+							<div class="tg-pic-main">
+								不重复
+							</div>
+						</li>
+					</ul>
+				</div>
+			</section>
+			<footer class="tg-dim-footer clearfix">
+				<button id="tg-do-create">创建</button>	
+			</footer>
+		</div>
+	</div>
+	
+	<script src="./js/tgyBase.js"></script>
+	<script src="./js/echarts-all.js"></script>
+	<script>
+		/*
+		 *  提供全局变量，用于表示任务执行状态
+		 */
+		Caelum.Event.addHandler(document, "DOMContentLoaded", function() {
+			document.body.onselectstart = 'false';		//页面元素不能选中
+			var tgNav = document.getElementById("tg-nav"),
+				Event = Caelum.Event,
+				dimmer = document.getElementById("dimmer"),
+				taskPic = document.getElementById("tg-create-task"),
+				taskCross = document.getElementById("tgyCross"),
+				doCreate = document.getElementById("tg-do-create"),
+				taskIm = document.getElementById("tg-pic-yx"),
+				taskImpor = document.getElementById("tg-important"),
+				imUl = document.querySelector(".tg-pic-main ul"),
+				imSpan = imUl.getElementsByTagName("span"),
+				resetImp = document.getElementById("resetImp"),
+				wmine = document.getElementById("w-mine");
+			var date = new Date();
+			/*外部初始化声明*/
+			if(window.localStorage.index === undefined) {
+				window.localStorage.index = 0;      //今日任务索引
+			}else{
+				for(var i = 0, j = parseInt(window.localStorage.index); i < j; i++) {
+					var currentNode = window.localStorage["taskId"+i];
+					try {
+						currentNode = JSON.parse(currentNode);
+					}catch(e){}
+					console.log(currentNode);
+					/*插入下面的节点*/
+					insertNode(currentNode["valueAim"], currentNode["name"], currentNode["nowTime"], currentNode["valueImp"], currentNode["lastTime"], false);
+					if(currentNode["success"]) {
+						console.log("下面");
+						insertNodeBottom(currentNode["valueAim"], currentNode["name"], currentNode["nowTime"], currentNode["valueImp"], currentNode["lastTime"], false);
+					}else{
+						console.log("上面");
+						insertNodeTop(currentNode["id"], currentNode["valueAim"], currentNode["name"], currentNode["nowTime"], currentNode["valueImp"], currentNode["lastTime"], false);
+					}
+
+				}
+			}
+			function insertNodeTop(id, valueAim, valueText, nowTime, valueImp, lastTime, flag) {
+				var rootul = document.getElementById("w-finish").getElementsByTagName("ul")[0];
+				var rootli = document.querySelectorAll(".w-task-root")[0];
+				var insertNode = document.createElement("li");
+				insertNode.className = "w-task-item"
+				var tempText = '<input type="checkbox" data-id="{0}"><span class="w-task-content">{1}</span><a href="">#示例项目分组</a>';
+				insertNode.innerHTML = format(tempText, id, valueText);
+				console.log(valueImp)
+				switch(valueImp){
+					case "紧急":
+						console.log("执行紧急任务了");
+						insertNode.setAttribute("style","border-left:10px solid rgb(255, 152, 0);");
+						break;
+					case "非常紧急":
+						insertNode.setAttribute("style","border-left:10px solid rgb(255, 0, 0);");
+						break;
+				}
+				afterInsert(rootul, rootli, insertNode);
+			}
+			function insertNodeBottom(valueAim, valueText, nowTime, valueImp, lastTime, flag) {
+				var rootul = document.getElementById("w-unfinish").getElementsByTagName("ul")[0];
+				var rootli = document.querySelectorAll(".w-task-root")[1];
+				var insertNode = document.createElement("li");
+				insertNode.className = "w-task-item"
+				var tempText = '<span class="w-task-content w-task-delete">{0}</span><a href="">#示例项目分组</a>';
+				insertNode.innerHTML = format(tempText, valueText);
+				afterInsert(rootul, rootli, insertNode);
+				switch(valueImp){
+					case "紧急":
+						console.log("执行紧急任务了");
+						insertNode.setAttribute("style","border-left:10px solid rgb(255, 152, 0);");
+						break;
+					case "非常紧急":
+						insertNode.setAttribute("style","border-left:10px solid rgb(255, 0, 0);");
+						break;
+				}
+			}
+			/*************事件优先级别选择****************/
+
+			/******删除已经完成的任务，添加下面的节点*****/
+			Event.addHandler(document.getElementById("w-finish"), "click", function(event) {
+				var event = Event.getEvent(event),
+					target = Event.getTarget(event);
+				if(target.nodeName.toLowerCase() === 'input') {
+					target.parentElement.style.opacity = "0";
+					setTimeout(function(){
+						target.parentElement.remove();
+						var currentTask = window.localStorage["taskId"+target.getAttribute("data-id")];
+						console.log(currentTask);
+						var currentNode = JSON.parse(currentTask);    //解析成能用的对象;
+						insertNodeBottom(currentNode["valueAim"], currentNode["name"], currentNode["nowTime"], currentNode["valueImp"], currentNode["lastTime"], false);   //插入底部
+						insertNode("完成了任务", currentNode["name"], currentNode["nowTime"], currentNode["valueImp"], currentNode["lastTime"], false);  //插入事件,并不插入数据
+						currentNode["success"] = true;
+						window.localStorage["taskId"+target.getAttribute("data-id")] = JSON.stringify(currentNode);  //重写数据
+					}, 500)
+				}else{
+					return;
+				}
+			})
+			Event.addHandler(wmine,"click", function(event) {
+				var topDimmer = document.getElementById("top-dimmer");
+				if(topDimmer.style.top === "-100%") {
+					topDimmer.style.top = "52px";
+				}else{
+					topDimmer.style.top = "-100%";
+				}
+			})
+			Event.addHandler(taskImpor, "click", function(event) {
+				var event = Event.getEvent(event),
+					target = Event.getTarget(event);
+				if(target.nodeName.toLowerCase() !== "span") {
+					target = target.children[0];
+				}
+				for(var i = 0, j = imSpan.length; i < j; i++) {
+					removeClass(imSpan[i], "tg-check");
+				}
+				addClass(target, "tg-check");
+				taskIm.innerHTML = target.firstChild.nodeValue;
+				taskIm.style.color = target.style.color;
+			})
+			/****************nav选择，弹出dimmer************************/
+			Event.addHandler(tgNav, "click", function(event){
+				var event = Event.getEvent(event),
+					target = Event.getTarget(event);
+				//循环找到li节点
+				while(target.nodeName.toLowerCase() !== "li") {
+					target = target.parentElement;
+				}
+				console.log(target.getAttribute("date-item"));
+				runDimmer(target.getAttribute("date-item"));
+			})
+			Event.addHandler(taskCross, "click", function(event){
+				var event = Event.getEvent(event);
+				Event.stopPropagation(event);    //取消冒泡
+				_afterDimmer();
+			})
+			/*************插入节点****************/
+			Event.addHandler(doCreate, "click", function(event){
+				var event = Event.getEvent(event);
+				Event.stopPropagation(event);    //取消冒泡
+				var valueAim = "创建了任务",
+					valueText =  document.getElementsByTagName("textarea")[0].value,    //任务细节
+					lastTime = document.querySelectorAll("input[type=date]")[0].value,  //截止时间
+					valueImp = taskIm.firstChild.nodeValue,        //任务权重
+					nowTime = date.getHours()+":"+date.getMinutes();  //创建任务时间
+				insertNode(valueAim, valueText, nowTime, valueImp, lastTime, true);
+			})
+			function insertNode(valueAim, valueText, nowTime, valueImp, lastTime, flag) {
+				if(valueAim.length < 1 || valueText.length < 1) {
+					return;
+				}else {
+					var rootul = document.getElementsByClassName("tg-items")[0];
+					var rootli = rootul.getElementsByClassName("tg-li-root")[0];   //应该循环创建
+					var insertNode = document.createElement("li");
+					insertNode.className = "tg-li-ch";
+					var tempText = '<span class="tg-sm-head"><img src="./image/person.jpg" alt=""></span><span class="tg-sm-name"><span>CaelumTian </span>{0}</span><span class="tg-sm-task"><i class="icon-task"></i>{1}</span><span class="tg-sm-time">{2}</span>';
+					insertNode.innerHTML = format(tempText, valueAim, valueText, nowTime);   //字符串替换
+					if(flag) {
+						var currentIndex = parseInt(window.localStorage.index);
+						var currentTask = {	
+							"id" : currentIndex,
+							"valueAim" : valueAim,
+							"name" : valueText,
+							"nowTime" : nowTime,
+							"valueImp" : valueImp,
+							"lastTime" : lastTime,
+							"success" : false
+						}  //插入web数据库
+						console.log(currentIndex);
+						window.localStorage["taskId"+currentIndex] = JSON.stringify(currentTask);
+						window.localStorage.index = ++currentIndex;
+						/***********************向浮层插入节点******************************/
+						insertNodeTop(currentTask["id"], currentTask["valueAim"], currentTask["name"], currentTask["nowTime"], currentTask["valueImp"], currentTask["lastTime"], false);
+					}
+					afterInsert(rootul, rootli, insertNode);
+					//这里应该加入回调函数
+					document.getElementsByTagName("textarea")[0].value = "";
+					document.querySelectorAll("input[type=date]")[0].value = "";
+					//resetImp.click();
+					_afterDimmer();
+				}
+			}
+			/*
+			 *  根据传过来的标志，决定弹出哪个项目
+			 */ 
+			function runDimmer(itemType) {
+				_beforeDimmer();
+			}
+			//弹出层前置后置操作
+			function _beforeDimmer() {
+				dimmer.style.display = "block";
+				setTimeout(function(){
+					addClass(taskPic,"tg-create-task-active");
+				}, 0)
+				//addClass(.tg-create-task-active)
+			}
+			function _afterDimmer() {
+				removeClass(taskPic,"tg-create-task-active");
+				setTimeout(function(){
+					dimmer.style.display = "none";
+				}, 600)
+			}
+		})
+		var myChart = echarts.init(document.getElementById('tg-form')); 
+        var option = {
+            tooltip: {
+                show: false
+            },
+            grid: {
+        		borderWidth: 0,
+        		x:40,
+       		 	y: 20,
+       		 	width:280,
+    		},
+            xAxis : [
+                {
+                    type : 'category',
+                    data : [
+                    	"05/29","05/30","05/31","06/01","06/02","06/03"
+                    ],
+                }
+            ],
+            yAxis : [
+                {
+                    type : 'value'
+                }
+            ],
+            series : [
+                {
+                    "name":"销量",
+                    "type":"bar",
+                    itemStyle: {
+                        normal: {
+                            color: function(params) {
+                                // build a color map as your need.
+                                var colorList = [
+                                  '#C1232B','#5B6E02','#0171B5','#E87C25','#27727B',
+                                   '#FE8463'
+                                ];
+                                return colorList[params.dataIndex]
+                            },
+                        }
+                    },
+                    "data":[5, 20, 40, 10, 10,10,10]
+                }
+            ]
+        };
+        // 为echarts对象加载数据 
+        myChart.setOption(option); 
+	</script>
+</body>
+</html>

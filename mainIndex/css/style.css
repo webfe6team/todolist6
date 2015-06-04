@@ -1,0 +1,156 @@
+html,body,ul,li,p,h1{
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}
+body{
+	background: rgb(238,238,238);
+	font-family: 微软雅黑;
+	overflow-x: hidden;
+}
+ul,li{
+	list-style: none;
+}
+a{
+	text-decoration: none;
+	color: rgb(56,56,56);
+}
+img{
+	border: none;
+}
+#container{
+	overflow: hidden;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+}
+#aside {
+	position: fixed;
+	right: 0px;
+	width: 48px;
+	background-color: #fff;
+	top: 52px;
+	bottom: 0px;
+	border-left: 2px solid rgb(199,199,199);
+}
+#w-nav{
+	overflow: hidden;
+	margin: 0px auto;
+	height: 50px;
+	background: #fff;
+	color: rgb(56,56,56);
+	border-bottom: 2px solid rgb(199,199,199);
+}
+#w-nav span{
+	float: left;
+	font-weight: bold;
+	font-size: 30px;
+	margin-left: 40px;
+	display: block;
+}
+#elastic_nav_ul{
+	margin-left: 40px;
+	float: left;
+}
+#elastic_nav_ul li{
+	display:table-cell;
+	line-height: 3;
+	padding:0 16px 0 16px;
+	font-size: 16px;
+	height: 50px;
+	width: 70px;
+	position: relative;
+	text-align: center;
+	cursor: pointer;
+	z-index: 2;
+}
+.startMove{
+	position: relative;
+	left: 0;
+	background: #ccc;
+}
+#w-nav-right{
+	float: right;
+	margin-right: 100px;
+}
+#w-nav-right span{
+	font-size: 14px;
+	line-height: 50px;
+}
+#w-nav-right a{
+	display: inline-block;
+	padding-left: 20px;
+}
+#w-nav-right a:hover{
+	color: rgb(3,169,244);
+}
+#w-nav-right span img{
+	vertical-align: middle;
+	border: none;
+	margin-right: 10px;
+}
+#w-create h1{
+	float: left;
+	margin: -2px 5px 0 0;
+}
+.w-user{
+	width: 26px;
+	height: 26px;
+	border-radius: 50%;
+}
+
+.w-create-hiden{
+	width: 185px;
+	height: 0;
+	overflow: hidden;
+	background: #fff;
+	position: absolute;
+	z-index: 3;
+}
+.w-ul1{
+	right: 150px;
+	box-shadow: 0 7px 21px rgba(0,0,0,.1);
+}
+.w-ul2{
+	right: 20px;
+	box-shadow: 0 7px 21px rgba(0,0,0,.1);
+}
+.w-create-hiden li{
+	height: 40px;
+	line-height: 42px;
+	padding-left: 15px;
+}
+.w-create-hiden li img{
+	vertical-align: middle;
+	margin-right: 10px;
+}
+.w-create-hiden a:hover{
+	color: rgb(3,169,244);
+}
+
+.w-content{
+	width: 0;
+	overflow: hidden;
+	height: 600px;
+	margin: auto;
+	position: relative;
+	left: 0;
+	display: none;
+	top: 0;
+	background: red;
+}
+#w-content1{
+	width: 1340px;
+	display: block;
+}
+#realContent {
+  	border: 0;
+  	margin: 0;
+  	position: fixed;
+  	top: 52px;
+  	right: 50px;
+  	bottom: 0px;
+  	width: 100%;    /*必须指定长高*/
+  	height: 100%;
+}

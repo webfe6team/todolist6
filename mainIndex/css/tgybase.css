@@ -1,0 +1,443 @@
+/*****************icon样式****************************/
+/*i标签做为图标样式依附*/
+@font-face {
+	font-family: 'caelum';
+			src: url("../fonts/icomoon.eot"); /*IE9兼容模式*/
+			src: url("../fonts/icomoon.eot?#iefix") format('embedded-opentype'),
+				 url("../fonts/icomoon.woff") format('woff'),
+				 url("../fonts/icomoon.ttf") format('truetype'),
+				 url("../fonts/icomoon.svg") format('svg');
+}
+i[class^="icon"] {
+	font-family: "caelum";
+	font-style: normal;
+}
+.tgy-base-icon {
+	height: 30px;
+  	line-height: 1;
+  	font-size: 26px;
+  	margin-bottom: 4px;
+  	display: inline-block;
+}
+.icon-task:before {
+	content: "\e926";
+}
+.icon-books:before {
+	content: "\e920";
+}
+.icon-word:before {
+	content: "\eadc";
+}
+.icon-books:before {
+	content: "\e920";
+}
+.icon-earth:before {
+	content: "\e9ca";
+}
+.icon-cross:before {
+	content: "\ea0f";
+}
+/*********************基本样式***************************/
+* {
+	box-sizing: border-box;
+  	font-family: 微软雅黑;
+}
+.tg-container {
+  	padding-top: 50px;
+  	padding-right: 50px;
+  	background-color: #eee;
+	background-color: #eee;
+}
+.tg-header {
+	position: fixed;
+	z-index: 10;
+  	top: 50px;
+  	left: 0;
+  	right: 50px;
+  	height: 50px;
+  	border-bottom: 1px solid #d9d9d9;
+  	background-color: #eee;
+}
+.tg-projects {
+	display: inline-block;
+  	height: 50px;
+  	line-height: 20px;
+  	min-width: 194px;
+  	margin: 0;
+  	padding: 15px 25px;
+  	font-weight: bold;
+}
+.tg-header ul {
+	display: inline-block;
+  	vertical-align: bottom;
+}
+.tg-header ul li {
+	float: left;
+}
+.tg-header ul li a {
+	display: inline-block;
+  	position: relative;
+  	height: 50px;
+  	margin: 0 20px;
+  	padding: 15px 5px;
+  	color: #383838;
+  	font-size: 15px;
+  	-webkit-transition: all 300ms;
+		-ms-transition: all 300ms;
+			transition: all 300ms;
+}
+.tg-header ul li a:hover {
+	border-bottom: 4px solid #03a9f4;
+}
+.tg-headNavActive {
+	border-bottom: 4px solid #03a9f4;
+}
+.tg-main {
+	margin-top: 50px;
+	max-width: 1100px;
+	margin: 70px auto 30px;
+	padding-right: 400px;
+}
+/**********双飞翼布局，右侧380px固定************/
+.tg-left {
+	float: left;
+	width: 100%;
+}
+.tg-right {
+	width: 380px;
+  	float: left;
+  	margin-left: -380px;
+  	position: relative;
+  	left: 400px;
+}
+/**********左侧浮动布局*************/
+.tg-iconHead {
+	width: 64px;
+  	height: 64px;
+  	margin: 10px 0;
+  	-webkit-border-radius: 50%;
+  		 -o-border-radius: 50%;
+  		 	border-radius: 50%;
+  	float: left;
+  	background: url("../image/person.jpg");
+  	background-size: cover;
+}
+.tg-left-header {
+	margin-bottom: 20px;
+}
+.tg-left-nav {
+	margin-left: 90px;
+	background-color: #fff;
+	-webkit-border-radius: 2px;
+		 -o-border-radius: 2px;
+		 	border-radius: 2px;
+	box-shadow: 0 0 1px #AEAEAE;
+}
+.tg-left-nav li {
+	width: 25%;
+  	float: left;
+  	text-align: center;
+  	position: relative;
+}
+.tg-left-nav li:after {
+	position: absolute;
+  	top: 20px;
+  	bottom: 20px;
+  	right: 0;
+  	content: '';
+  	border-right: 1px solid rgba(0,0,0,.07);
+}
+.tg-left-nav li a {
+	display: inline-block;
+  	margin: 15px 0;
+  	color: #a6a6a6;
+  	-webkit-transition: all 300ms;
+		-ms-transition: all 300ms;
+			transition: all 300ms;
+}
+.tg-left-nav li a span {
+	display: block;
+}
+.tg-left-nav li a:hover {
+	color:#03a9f4;
+}
+.tg-items {
+	margin-bottom: 20px;
+	background-color: #fff;
+	border-radius: 2px;
+	box-shadow: 0 0 1px #AEAEAE;
+	padding-left: 15px;
+}
+.tg-li-root {
+	padding: 10px 15px 10px 5px !important; 
+}
+.tg-li-ch {
+	font-size: 15px;
+	position: relative;
+}
+.tg-items li {
+	padding: 18px 0px;
+	color: #646464;
+	border-bottom: 1px solid #d2d2d2;
+}
+.tg-items li:last-child {
+	border-bottom: none;
+}
+.tg-items li span {
+	display: inline-block;
+	vertical-align: bottom;
+}
+.tg-sm-head {
+	margin: 0 0 0 5px;
+	width: 24px;
+  	height: 24px;
+  	-webkit-border-radius: 50%;
+  		 -o-border-radius: 50%;
+  		 	border-radius: 50%;
+  	overflow: hidden;
+}
+.tg-sm-head img {
+	width: 100%;
+	height: 100%;
+}
+.tg-sm-name {
+	text-overflow: ellipsis;
+  	white-space: nowrap;
+  	overflow: hidden;
+  	padding: 2px 10px 2px 0;
+  	width: 35%;
+  	margin-left: 8px;
+  	color: grey;
+}
+.tg-sm-name span {
+	margin-right: 8px;
+  	color: #383838;
+  cursor: pointer;
+}
+.tg-sm-task {
+	font-size: 14px;
+	width: 35%;
+	text-overflow: ellipsis;
+  	white-space: nowrap;
+  	overflow: hidden;
+}
+.tg-sm-task:hover {
+	color: #03a9f4;
+	cursor: pointer;
+}
+.tg-sm-task i {
+	margin-right: 5px;
+	vertical-align: -1px;
+}
+.tg-sm-time {
+	position: absolute;
+	right: 15px;
+}
+.tg-r-task,
+.tg-r-form {
+	padding: 0px 15px;
+	margin-bottom: 20px;
+	background-color: #fff;
+	box-shadow: 0 0 1px #AEAEAE;
+}
+.tg-r-head {
+	color: grey;
+  	font-size: 18px;
+  	margin: 0 15px;
+  	padding: 10px 15px 10px 5px;
+  	border-bottom: 1px solid #d9d9d9;
+}
+.tg-r-total li {
+	float: left;
+	width: 33.33333%;
+	margin: 15px 0;
+	padding-left: 20px;
+}
+.tg-r-title1 {
+	color: #a6a6a6;
+}
+.tg-r-num {
+	display: block;
+	font-size: 36px;
+	color: grey;
+}
+.tg-r-num2 {
+	display: block;
+	font-size: 36px;
+	color: #4bd649;
+}
+.tg-r-num3 {
+	display: block;
+	font-size: 36px;
+	color: #ff0000;
+}
+/************悬浮层代码*******************/
+#dimmer {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,.7);
+	z-index: 2100;
+}
+#tg-create-task {
+	width: 600px;
+	background-color: #FAFAFA;
+	border-bottom: 1px solid #d9d9d9;
+	position: absolute;
+	/*top: 50px;*/
+	top: -390px;   /*离开标标准页面*/
+	left: 50%;
+	margin-left: -300px;
+	-webkit-border-radius: 3px;
+		 -o-border-radius: 3px;
+		 	border-radius: 3px;
+  	color: #383838;
+  	font-size: 14px;
+  	-webkit-transition: top 600ms;
+		-ms-transition: top 600ms;
+			transition: top 600ms;
+}
+.tg-create-task-active {
+	top: 50px !important;
+}
+.tg-dim-head {
+	position: relative;
+  	padding: 20px;
+  	border-bottom: 1px solid #d9d9d9;
+}
+.tg-dim-title {
+	font-size: 18px;
+  	color: #383838;
+}
+.tg-dim-cross {
+	float: right;
+	cursor: pointer;
+}
+.tg-dim-main {
+	padding: 20px;
+}
+#tg-taskContent {
+	width: 100%;
+	padding: 10px 15px;
+	height: 90px;
+	color: #383838;
+	background-color: #fff;
+	font-size: 14px;
+	line-height: 1.4;
+	margin-bottom: 20px;
+	border: 1px solid #d9d9d9;
+}
+.tg-dim-pic {
+	background-color: #fff;
+	border: 1px solid #d9d9d9;
+}
+.tg-dim-pic>ul>li:last-child {
+	border-right: none;
+}
+.tg-dim-pic>ul>li {
+	width: 25%;
+	border-right: 1px solid #d9d9d9;
+	float: left;
+}
+.tg-dim-pic>ul>li h6 {
+	position: relative;
+  	margin: 15px 15px 0;
+  	line-height: 12px;
+  	color: grey;
+}
+.tg-pic-main {
+	padding: 12px 0px 15px 10px;
+	position: relative;
+}
+.tg-floatBlock {
+	display: block;
+	float: left;
+	margin-right: 3px;
+}
+.tg-pic-name {
+	font-size: 13px;
+	display: inline-block;
+  	width: 70%;
+  	text-overflow: ellipsis;
+  	white-space: nowrap;
+  	overflow: hidden;
+  	cursor: pointer;
+}
+.tg-pic-name:hover{
+	color:#03a9f4;
+}
+.tg-pic-main input {
+	width: 95%;
+}
+#tg-pic-yx {
+	position: relative;
+	cursor: pointer;
+}
+#tg-pic-yx:before {
+	content: "\e946";
+	font-family: "caelum";
+	margin-right: 5px;
+	margin-left: 10px;
+}
+.tg-pic-main>ul {
+	border: 1px solid #d9d9d9;
+	position: absolute;
+  	left: -10px;
+  	top: 35px;
+  	-webkit-border-radius: 3px;
+		 -o-border-radius: 3px;
+		 	border-radius: 3px;
+}
+.tg-pic-main>ul>li {
+  	background-color: #fff;
+  	width: 170px;
+  	padding: 8px;
+}
+.tg-pic-main>ul>li:hover {
+	background-color: #E7E7E7;
+	cursor: pointer;
+}
+.tg-pic-main>ul{
+	display: none;
+	z-index: 20;
+}
+.tg-pic-main:hover ul {
+	display: block;
+	cursor: pointer;
+}
+.tg-pic-main>ul>li>span:before{
+	content: "\e946";
+	font-family: "caelum";
+	margin-right: 5px;
+	margin-left: 10px;
+}
+.tg-check:after {
+	content: "\ea10";
+	font-family: "caelum";
+	float: right;
+}
+.tg-dim-footer {
+	position: relative;
+  	padding: 20px;
+  	border-top: 1px solid #d9d9d9;
+}
+#tg-do-create {
+	float: right;
+	color: #fff;
+  	background-color: #03a9f4;
+  	border-color: #03a9f4;
+  	display: inline-block;
+  	padding: 8px 25px;
+  	font-size: 14px;
+  	text-align: center;
+  	cursor: pointer;
+  	border: 1px solid #d9d9d9;
+  	-webkit-border-radius: 3px;
+		 -o-border-radius: 3px;
+		 	border-radius: 3px;
+  	white-space: nowrap;
+}
