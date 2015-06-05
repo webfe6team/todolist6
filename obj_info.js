@@ -3,10 +3,8 @@
 属性：
 1. 任务名称(taskName: String)
 2. 任务内容描述(taskDescribe: String)
-3. 任务类型描述(taskType: String)
-4. 是否为星标任务(taskMark: boolen)
+3. 任务优先级(priority: String)
 5. 创建时间(startTime: Date)
-6. 任务状态，是否已完成(taskState: boolen)
 7. 完成时间(endTime: Date)
 
 task = {
