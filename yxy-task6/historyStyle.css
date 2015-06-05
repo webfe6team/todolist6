@@ -12,9 +12,9 @@ body{
 	min-height:100px;
 	background-color: grey;
 }
-#no1{
+/*#no1{
 	display: none;
-}
+}*/
 .yxy-taskName{
 	float:left;
 	width:40%;
