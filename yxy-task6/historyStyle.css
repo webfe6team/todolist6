@@ -1,49 +1,55 @@
-.card{
+body{
+	background-color: #f1f1f1;
+}
+.yxy-task{
+	margin-left:200px;
+}
+.yxy-card{
 	width:400px;
 	border:1px solid black;
 	position:relative;
 	padding-bottom:5px;
 	min-height:100px;
+	background-color: grey;
 }
 #no1{
-	display:none;
+	display: none;
 }
-.taskName{
+.yxy-taskName{
 	float:left;
 	width:40%;
 	word-wrap:break-word;
 	vertical-align:top;
 }
-.taskType{
+.yxy-priority{
 	float:right;
 	width:40%;
 	word-wrap:break-word;
 	text-align:right;
 }
-.startTime{
+.yxy-startTime{
 	float:left;
 	width:40%;
 	word-wrap:break-word;
 	vertical-align:bottom;
 }
-.endTime{
+.yxy-endTime{
 	float:right;
 	width:40%;
 	word-wrap:break-word;
 	text-align:right;
 }
-}
-.taskDescribe{
+.yxy-taskDescribe{
 	display:inline-block;
 	width:100%;
 	word-wrap:break-word;
 	vertical-align:top;
 }
-.contents{
+.yxy-contents{
 	width:100%;
 	margin-top:10px;
 }
-.time{
-	color: grey;
+.yxy-time{
+	color: blue;
 	font-size: 0.5em;
 }
