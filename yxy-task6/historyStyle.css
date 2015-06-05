@@ -1,0 +1,49 @@
+.card{
+	width:400px;
+	border:1px solid black;
+	position:relative;
+	padding-bottom:5px;
+	min-height:100px;
+}
+#no1{
+	display:none;
+}
+.taskName{
+	float:left;
+	width:40%;
+	word-wrap:break-word;
+	vertical-align:top;
+}
+.taskType{
+	float:right;
+	width:40%;
+	word-wrap:break-word;
+	text-align:right;
+}
+.startTime{
+	float:left;
+	width:40%;
+	word-wrap:break-word;
+	vertical-align:bottom;
+}
+.endTime{
+	float:right;
+	width:40%;
+	word-wrap:break-word;
+	text-align:right;
+}
+}
+.taskDescribe{
+	display:inline-block;
+	width:100%;
+	word-wrap:break-word;
+	vertical-align:top;
+}
+.contents{
+	width:100%;
+	margin-top:10px;
+}
+.time{
+	color: grey;
+	font-size: 0.5em;
+}
