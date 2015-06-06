@@ -1,0 +1,307 @@
+/* line 1, ../sass/reset.scss */
+html, body, h1, h2, h3, h4, h5, h6, div, dl, dt, dd, ul, ol, li, p, blockquote, pre, hr, figure, table, caption, th, td, form, fieldset, legend, input, button, textarea, menu {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 2, ../sass/reset.scss */
+header, footer, section, article, aside, nav, hgroup, address, figure, figcaption, menu, details {
+  display: block;
+}
+
+/* line 3, ../sass/reset.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 4, ../sass/reset.scss */
+caption, th {
+  text-align: left;
+  font-weight: normal;
+}
+
+/* line 5, ../sass/reset.scss */
+html, body, fieldset, img, iframe, abbr {
+  border: 0;
+}
+
+/* line 6, ../sass/reset.scss */
+i, cite, em, var, address, dfn {
+  font-style: normal;
+}
+
+/* line 7, ../sass/reset.scss */
+[hidefocus], summary {
+  outline: 0;
+}
+
+/* line 8, ../sass/reset.scss */
+li {
+  list-style: none;
+}
+
+/* line 9, ../sass/reset.scss */
+sup, sub {
+  font-size: 83%;
+}
+
+/* line 10, ../sass/reset.scss */
+pre, code, kbd, samp {
+  font-family: inherit;
+}
+
+/* line 11, ../sass/reset.scss */
+q:before, q:after {
+  content: none;
+}
+
+/* line 12, ../sass/reset.scss */
+textarea {
+  overflow: auto;
+  resize: none;
+}
+
+/* line 13, ../sass/reset.scss */
+label, summary {
+  cursor: default;
+}
+
+/* line 14, ../sass/reset.scss */
+a, button {
+  cursor: pointer;
+}
+
+/* line 15, ../sass/reset.scss */
+h1, h2, h3, h4, h5, h6, em, strong, b {
+  font-weight: bold;
+}
+
+/* line 16, ../sass/reset.scss */
+del, ins, u, s, a, a:hover {
+  text-decoration: none;
+}
+
+/* line 19, ../sass/reset.scss */
+.clearfix {
+  *zoom: 1;
+}
+
+/* line 22, ../sass/reset.scss */
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  line-height: 0;
+  content: "";
+}
+
+/* line 28, ../sass/reset.scss */
+.clearfix:after {
+  clear: both;
+}
+
+/* line 3, ../sass/taskdetail.scss */
+body {
+  background-color: #eee;
+}
+
+/* line 6, ../sass/taskdetail.scss */
+.content {
+  width: 80%;
+  margin: 0 auto;
+}
+/* line 9, ../sass/taskdetail.scss */
+.content h2 {
+  font-size: 20px;
+  font-weight: normal;
+}
+/* line 13, ../sass/taskdetail.scss */
+.content .display {
+  font-size: 20px;
+  color: grey;
+  position: relative;
+  top: -20px;
+  left: 100px;
+}
+/* line 22, ../sass/taskdetail.scss */
+.content .after::after {
+  content: "";
+  position: relative;
+  top: -5px;
+  width: 80%;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  *zoom: 1;
+  *display: inline;
+  border-top: 1px solid grey;
+}
+/* line 34, ../sass/taskdetail.scss */
+.content .perProject .project {
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  *zoom: 1;
+  *display: inline;
+  width: 267px;
+  height: 134px;
+  margin: 25px;
+  background: url(../images/probg.jpg);
+  background-size: 267px 134px;
+}
+/* line 42, ../sass/taskdetail.scss */
+.content .perProject .project .proName {
+  color: #FFF;
+  overflow: hidden;
+  margin: 20px 20px 10px 20px;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.35);
+}
+/* line 48, ../sass/taskdetail.scss */
+.content .perProject .project .explain {
+  color: #FFF;
+  overflow: hidden;
+  margin: 0 20px;
+}
+/* line 53, ../sass/taskdetail.scss */
+.content .perProject .project .proFunction {
+  position: relative;
+  top: -50px;
+  left: 200px;
+}
+/* line 57, ../sass/taskdetail.scss */
+.content .perProject .project .proFunction a {
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  *zoom: 1;
+  *display: inline;
+  width: 24px;
+  height: 24px;
+}
+/* line 62, ../sass/taskdetail.scss */
+.content .perProject .project .proFunction .edit {
+  display: none;
+  background: url(../images/pen.ico);
+}
+/* line 66, ../sass/taskdetail.scss */
+.content .perProject .project .proFunction .collect {
+  display: none;
+  background: url(../images/star.ico);
+}
+/* line 71, ../sass/taskdetail.scss */
+.content .perProject .project:hover {
+  transform: translateY(-5px);
+  transition: transform 0.3s;
+  box-shadow: 2px 2px 4px 4px #888888;
+}
+/* line 74, ../sass/taskdetail.scss */
+.content .perProject .project:hover .edit, .content .perProject .project:hover .collect {
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  *zoom: 1;
+  *display: inline;
+}
+
+/* line 86, ../sass/taskdetail.scss */
+.newProject {
+  display: none;
+  width: 100%;
+  padding: 50px 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(56, 56, 56, 0.5);
+}
+/* line 94, ../sass/taskdetail.scss */
+.newProject .npcontent {
+  width: 43%;
+  margin: 0 auto;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  padding-bottom: 30px;
+  background-color: #FFF;
+}
+/* line 100, ../sass/taskdetail.scss */
+.newProject .npcontent header {
+  -moz-border-radius: 5px 5px 0 0;
+  -webkit-border-radius: 5px;
+  border-radius: 5px 5px 0 0;
+  padding: 20px 20px 0 20px;
+  background-color: #e87989;
+  color: #fff;
+}
+/* line 105, ../sass/taskdetail.scss */
+.newProject .npcontent header h2 {
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  *zoom: 1;
+  *display: inline;
+}
+/* line 108, ../sass/taskdetail.scss */
+.newProject .npcontent header .close {
+  float: right;
+  font-size: 24px;
+  color: #fff;
+}
+/* line 114, ../sass/taskdetail.scss */
+.newProject .npcontent header .logo .proimg {
+  width: 140px;
+  height: 140px;
+  margin: 0 auto;
+  border: 4px solid #FFF;
+  background: url(../images/probg.jpg);
+  background-size: 140px 140px;
+  -moz-border-radius: 70px;
+  -webkit-border-radius: 70px;
+  border-radius: 70px;
+}
+/* line 123, ../sass/taskdetail.scss */
+.newProject .npcontent header .logo .editimg {
+  width: 30px;
+  height: 30px;
+  position: relative;
+  top: -50px;
+  left: 320px;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  *zoom: 1;
+  *display: inline;
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  border-radius: 15px;
+  background: url(../images/pen.ico) no-repeat #fff;
+}
+/* line 140, ../sass/taskdetail.scss */
+.newProject .npcontent .proInfo label, .newProject .npcontent .proInfo input, .newProject .npcontent .proInfo select, .newProject .npcontent .proInfo textarea, .newProject .npcontent .proInfo button, .newProject .npcontent .proInfo option {
+  display: block;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  box-sizing: border-box;
+  width: 90%;
+  margin: 0 auto;
+  font-size: 14px;
+  line-height: 40px;
+}
+/* line 149, ../sass/taskdetail.scss */
+.newProject .npcontent .proInfo input, .newProject .npcontent .proInfo select, .newProject .npcontent .proInfo textarea, .newProject .npcontent .proInfo option {
+  border: 1px solid #d9d9d9;
+}
+/* line 152, ../sass/taskdetail.scss */
+.newProject .npcontent .proInfo select {
+  height: 40px;
+}
+/* line 155, ../sass/taskdetail.scss */
+.newProject .npcontent .proInfo button {
+  margin-top: 20px;
+  color: #FFF;
+  background-color: #03a9f4;
+  border: 0;
+}

@@ -7,13 +7,78 @@
     
     <script type="text/javascript">
     var curpanel;
+    var curli;
    function edit(){
         document.getElementById('ly-nofinished-task-ul').addEventListener('click',function(e){
-            if(e.target && e.target.nodeName.toUpperCase == "LI"){alert('li');}
-            alert("noli");
 
+          
+
+            var cur = e.target;
+
+            while(cur&&cur.nodeName!="LI")
+            {
+                cur = cur.parentNode;
+            }
+            if(cur.querySelectorAll("h1")[0].innerText!="任务名")
+            {
+                var newdiv = document.getElementsByClassName('edit')[0].cloneNode(true);
+               cur.appendChild(newdiv);
+               newdiv.style.display="block";
+               curli = cur;
+           }
+            
         });
-   }
+
+           document.getElementById('ly-finished-task-ul').addEventListener('click',function(e){
+
+            
+
+            var cur = e.target;
+
+            while(cur&&cur.nodeName!="LI")
+            {
+                cur = cur.parentNode;
+            }
+            var newdiv = document.getElementsByClassName('deletefinished')[0].cloneNode(true);
+            if(cur.querySelectorAll("h1")[0].innerText!="任务名")
+            {
+           cur.appendChild(newdiv);
+           newdiv.style.display="block";
+           curli = cur;
+           }
+            
+        });
+       }
+
+       function removetask(cur){
+        
+            if(cur.querySelectorAll("h1")[0].innerText!="任务名" )
+            {
+                cur.removeChild(cur.getElementsByClassName('edit')[0]);
+                var curDiv = cur.parentNode;
+
+                var ul = document.getElementById("ly-finished-task-ul");
+                var pnode = cur.cloneNode(true);
+                curDiv.removeChild(cur);
+                ul.appendChild(pnode);  
+
+                
+             }
+
+
+       }
+       function deletetask(cur){
+        if(cur.querySelectorAll("h1")[0].innerText!="任务名" )
+            {
+                var curDiv = cur.parentNode;
+
+               // var ul = document.getElementById("ly-finished-task-ul");
+                //var pnode = cur.cloneNode(true);
+                curDiv.removeChild(cur);
+                //ul.appendChild(pnode);  
+                 
+             }
+       }
 
     function addtask(obj){
         curpanel = obj;
@@ -123,7 +188,7 @@
                     </header>
                     
                     <div class="ly-addtask">
-                            <ul class="ly-taskdone" id="ly-finished-task-ul">
+                            <ul class="ly-taskdone"  id="ly-finished-task-ul">
                                   <li class = "ly-task-li">
                                         <div class="ly-detail-task">
                                            
@@ -197,8 +262,18 @@
         </h2>
         
     </div>
+    <div class ="edit">
+         
+          <button id="remove" onclick="deletetask(curli)">删除</button>
+          <button id="fonished" onclick="removetask(curli)">已完成</button>
+    </div>
+     <div class ="deletefinished">
+         
+          <button id="remove" onclick="deletetask(curli)">删除</button>
+          
+    </div>
 </body>
 <script type="text/javascript">
-   
+  edit();  
 </script>
 </html>
